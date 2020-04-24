@@ -153,7 +153,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-wrench"></i>
               <p>
-                Kỹ thuật
+                Thiết kế
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -167,7 +167,7 @@
               <li class="nav-item">
                 <a href="{{route('staff.ticketlog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký sửa chữa</p>
+                  <p>Nhật ký</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -205,7 +205,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
               <p>
-                Lớp học
+                Dự án
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -213,19 +213,19 @@
               <li class="nav-item">
                 <a href="{{route('staff.course.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Danh sách lớp</p>
+                  <p>Danh sách dự án</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('staff.course.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
-                  <p>Thêm lớp mới</p>
+                  <p>Thêm dự án mới</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('staff.courselog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký lớp</p>
+                  <p>Nhật ký dự án</p>
                 </a>
               </li>
             </ul>
