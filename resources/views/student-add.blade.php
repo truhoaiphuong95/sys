@@ -2,7 +2,7 @@
 
 @section('head')
 <title>KING | Thêm học viên</title>
-<link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/select2/select2.min.css') }}">
 @stop
   
 @section('main')

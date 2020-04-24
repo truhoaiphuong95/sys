@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
 <title>KING | Danh sách lớp</title>
-<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -41,7 +41,7 @@
           <!-- Add the bg color to the header using any of the bg-* classes -->
           <div class="widget-user-header bg-primary">
             <div class="widget-user-image">
-              <img class="img-circle elevation-2" src="{{secure_asset('images/course-avt.png')}}" alt="User Avatar">
+              <img class="img-circle elevation-2" src="{{asset('images/course-avt.png')}}" alt="User Avatar">
             </div>
             <!-- /.widget-user-image -->
             <h3 class="widget-user-username">{{$course->name}}</h3>
@@ -182,8 +182,8 @@
 @stop
 
 @section('script')
-<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <script>
   $(function() {
     $("#example1").DataTable({

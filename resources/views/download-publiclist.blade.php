@@ -11,11 +11,11 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{secure_asset('dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/iCheck/square/blue.css')}}">
     <!-- Data Tables -->
-    <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   </head>
@@ -96,11 +96,11 @@
       </div>
     </div>
     <!-- jQuery -->
-    <script src="{{secure_asset('plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{secure_asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- iCheck -->
-    <script src="{{secure_asset('plugins/iCheck/icheck.min.js')}}"></script>
+    <script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
     <script>
       $(function () {
         $('input').iCheck({
@@ -110,8 +110,8 @@
         })
       })
     </script>
-    <script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-    <script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+    <script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
     <script>
       $(function () {
         $("#example1").DataTable({

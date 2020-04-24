@@ -2,7 +2,7 @@
 
 @section('head')
 <title>KING | Báo cáo công việc</title>
-<link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/select2/select2.min.css') }}">
 @stop
 
 @section('main')

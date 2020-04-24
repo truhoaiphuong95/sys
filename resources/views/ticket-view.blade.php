@@ -1,8 +1,8 @@
 @extends('master')
 @section('head')
 <title>KING | Xem biên nhân #{{$ticket->id}}</title>
-<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
-<link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/iCheck/square/blue.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -272,10 +272,10 @@
 <!-- /.content-wrapper -->
 @stop
 @section('script')
-<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <!-- iCheck -->
-<script src="{{secure_asset('plugins/iCheck/icheck.min.js')}}"></script>
+<script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
 <script>
   $(function() {
     $("#example1").DataTable({

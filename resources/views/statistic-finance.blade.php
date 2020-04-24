@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
 <title>KING | Thống kê tài chính</title>
-<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
     padding: 10px;
@@ -199,7 +199,7 @@
 @stop
 
 @section('script')
-<script src="{{secure_asset('plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
 <script>
   $(function() {
     'use strict'

@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
 <title>KING | Nhập phiếu thu mới</title>
-<link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -110,7 +110,7 @@
 @stop
 @section('script')
 <!-- Select2 -->
-<script src="{{secure_asset('plugins/select2/select2.full.min.js')}}"></script>
+<script src="{{asset('plugins/select2/select2.full.min.js')}}"></script>
 <script>
   $(function () {
     //Initialize Select2 Elements
