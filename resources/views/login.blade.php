@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="./"><b>KING</b> system</a>
+    <a href="./"><b>DELI</b> SYSTEM</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

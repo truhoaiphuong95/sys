@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   @yield('head')
-  <title>KING | Blank Page</title>
+  <title>DELI | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -28,10 +28,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.techking.dashboard.get')}}" class="nav-link">TechKING</a>
+        <a href="{{route('staff.techking.dashboard.get')}}" class="nav-link">DELI DESIGN</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.course.list.get')}}" class="nav-link">Khoá học</a>
+        <a href="{{route('staff.course.list.get')}}" class="nav-link">DỰ ÁN</a>
       </li>
     </ul>
 
@@ -57,7 +57,7 @@
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">KING System</span>
+      <span class="brand-text font-weight-light">DELI DESIGN</span>
     </a>
 
     <!-- Sidebar -->

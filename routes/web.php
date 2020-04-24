@@ -21,6 +21,7 @@ Route::get('/customer/{client_id}', 'TrackingController@getByClient')->name('gue
 
 Route::get('/login','LoginController@getLogin')->name('guest.login.get');
 Route::post('/login','LoginController@postLogin')->name('guest.login.post');
+
 Route::group(['prefix' => '','middleware' => 'staff'], function() 
 {
     Route::get('/checkauth', function ()
