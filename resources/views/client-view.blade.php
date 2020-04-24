@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Khách hàng: {{$client->name}}</title>
+<title>DELI | Khách hàng: {{$client->name}}</title>
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -71,7 +71,7 @@
                   <b>Email</b> @if ($client->email!="") <a class="float-right">{{$client->email}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
                 <li class="list-group-item">
-                  <b>Ngành học</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
+                  <b>Ngành nghề - Công việc</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
               </ul>
               @if(UserInfo()->level >= 3)
@@ -83,10 +83,10 @@
               </a>
               @endif
               <a href="{{route('staff.ticket.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThembiennhan">
-              <i class="fa fa-book"></i> Thêm biên nhận (F8)
+              <i class="fa fa-book"></i> Thêm thiết kế (F8)
               </a>
               <a href="{{route('staff.coursestudent.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemvaolop">
-              <i class="fa fa-university"></i> Thêm vào lớp (F9)
+              <i class="fa fa-university"></i> Error (F9)
               </a>
               <a href="{{route('staff.client.edit.get', ['client_id'=>$client->id])}}" class="btn btn-info btn-block"><b>Sửa thông tin</b></a>
             </div>
@@ -97,7 +97,7 @@
         <div class="col-md-9">
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">Danh sách biên nhận</h3>
+              <h3 class="card-title">Danh sách thiết kế</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

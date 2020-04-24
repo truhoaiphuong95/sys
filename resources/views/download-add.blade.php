@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Thêm link tải về</title>
+<title>DELI | Thêm link tải về</title>
 <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 @stop
   
@@ -51,7 +51,7 @@
           <div class="card-body">
             <div class="col-md-12">
               <div class="form-group col-md-12">
-                <label>Tên phần mềm</label>
+                <label>Tên File</label>
                 <input type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
               </div>
               <div class="form-group col-md-12">

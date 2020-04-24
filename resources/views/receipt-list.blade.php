@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sổ phiếu thu @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</title>
+<title>DELI | Sổ phiếu thu @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</title>
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')

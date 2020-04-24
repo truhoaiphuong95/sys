@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Thêm lớp học mới</title>
+<title>DELI | Thêm dự án mới</title>
 <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 @stop
@@ -14,12 +14,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>THÊM LỚP HỌC MỚI</h1>
+          <h1>THÊM LỚP DỰ ÁN MỚI</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập lớp học</li>
+            <li class="breadcrumb-item active">Nhập dự án</li>
           </ol>
         </div>
       </div>
@@ -42,16 +42,16 @@
           <div class="col-md-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Thêm lớp học mới</h3>
+                <h3 class="card-title">Thêm dự án mới</h3>
               </div>
               <div class="card-body">
                 <div class="col-md-12">
                   <div class="form-group col-md-12">
-                    <label>Tên lớp học</label>
+                    <label>Tên dự án</label>
                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Mã lớp học</label>
+                    <label>Mã dự án</label>
                     <input type="text" class="form-control" name="shortname" value="{{ old('shortname') }}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
@@ -63,7 +63,7 @@
                   </div>
                   <hr>
                   <div class="form-group col-md-12">
-                    <label>Nhóm môn học</label>
+                    <label>Nhóm môn dự án</label>
                     <select name="course_group_id" class="select2" data-placeholder="Select a State" style="width: 100%;">
                       @foreach($course_groups as $data)
                       <option value="{{$data->id}}">{{$data->name}}</option>
@@ -87,15 +87,15 @@
                     </select>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Số buổi</label>
+                    <label>Thời gian thực hiện</label>
                     <input type="number" class="form-control" name="lesson" value="{{ old('lesson') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ngày khai giảng</label>
+                    <label>Ngày nhận dự án</label>
                     <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{ old('opening_at') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Lịch học (Thứ - Tiết)</label>
+                    <label>Lịch thiết kế</label>
                     <input type="text" class="form-control" name="schedule" value="{{ old('schedule') }}" required>
                   </div>
                   <div class="form-group col-md-12">
@@ -103,15 +103,15 @@
                     <input type="number" class="form-control" name="maxseat" value="{{ old('maxseat') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Giáo viên</label>
+                    <label>Chuyên viên thiết kế</label>
                     <input type="text" class="form-control" name="teacher" value="{{ old('teacher') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Học phí</label>
+                    <label>Kinh phí</label>
                     <input type="number" class="form-control" name="tuition" value="{{ old('tuition') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ghi chú (Chỉ giáo viên xem)</label>
+                    <label>Ghi chú (Chỉ chuyên viên thiết kế xem)</label>
                     <input type="text" class="form-control" name="note" value="{{ old('note') }}">
                   </div>
                 </div>

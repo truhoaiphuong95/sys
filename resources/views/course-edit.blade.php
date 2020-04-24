@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Sửa thông tin lớp học</title>
+<title>DELI | Sửa thông tin dự án</title>
 <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 @stop
 
@@ -13,12 +13,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>SỬA THÔNG TIN LỚP HỌC</h1>
+          <h1>SỬA THÔNG TIN DỰ ÁN</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Sửa lớp học</li>
+            <li class="breadcrumb-item active">Sửa dự án</li>
           </ol>
         </div>
       </div>
@@ -41,51 +41,51 @@
           <div class="col-md-12">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Sửa thông lớp học</h3>
+                <h3 class="card-title">Sửa thông tin dự án</h3>
               </div>
               <div class="card-body">
                 <div class="col-md-12">
                   <div class="form-group col-md-12">
-                    <label>Tên lớp học</label>
+                    <label>Tên dự án</label>
                     <input type="text" class="form-control" name="name" value="{{$course->name}}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Mã lớp học</label>
+                    <label>Mã dự án</label>
                     <input type="text" class="form-control" name="shortname" value="{{$course->shortname}}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
                     <div class="custom-control custom-checkbox">
                       <input type='hidden' value='0' name='is_expected'>
                       <input class="custom-control-input" name="is_expected" type="checkbox" id="customCheckbox1" value="1" @if($course->is_expected) checked @endif>
-                      <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu đây là lớp dự kiến</label>
+                      <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu đây là dự án dự kiến</label>
                     </div>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Số buổi</label>
+                    <label>Thời gian thiết kế</label>
                     <input type="number" class="form-control" name="lesson" value="{{$course->lesson}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ngày khai giảng</label>
+                    <label>Ngày bắt đầu</label>
                     <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{date('Y-m-d', strtotime($course->opening_at))}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Lịch học (Thứ - Tiết)</label>
+                    <label>Lịch thiết kế</label>
                     <input type="text" class="form-control" name="schedule" value="{{$course->schedule}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Giáo viên</label>
+                    <label>Chuyên viên thiết kế</label>
                     <input type="text" class="form-control" name="teacher" value="{{$course->teacher}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Sỉ số</label>
+                    <label>Số lượng chuyên viên tham gia dự án</label>
                     <input type="number" class="form-control" name="maxseat" value="{{$course->maxseat}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Học phí</label>
+                    <label>Kinh phí dự án</label>
                     <input type="number" class="form-control" name="tuition" value="{{$course->tuition}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ghi chú (Chỉ giáo viên xem)</label>
+                    <label>Ghi chú (Chỉ chuyên viên thiết kế xem xem)</label>
                     <input type="text" class="form-control" name="note" value="{{$course->note}}">
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhật ký giáo dục</title>
+<title>DELI | Nhật ký dự án</title>
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')

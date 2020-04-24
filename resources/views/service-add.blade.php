@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Thêm dịch vụ</title>
+<title>DELI | Thêm dịch vụ</title>
 <link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')

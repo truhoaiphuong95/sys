@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhập phiếu thu mới</title>
+<title>DELI | Nhập phiếu thu mới</title>
 <link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')

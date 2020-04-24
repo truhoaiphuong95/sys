@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sổ biên nhận</title>
+<title>DELI | Yêu cầu thiết kế</title>
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
@@ -19,12 +19,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SỔ BIÊN NHẬN</h1>
+            <h1>THIẾT KẾ</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sổ biên nhận</li>
+              <li class="breadcrumb-item active">Thiết kế</li>
             </ol>
           </div>
         </div>
@@ -37,7 +37,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách biên nhận</h3>
+              <h3 class="card-title">Danh sách thiết kế</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
