@@ -2,24 +2,24 @@
 @section('main')
       <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">Danh sách biên nhận</h3>
+              <h3 class="card-title text-center">TIẾN ĐỘ THIẾT KẾ</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
+                <tr class="text-center">
                   <th>Số phiếu</th>
-                  <th>Dòng Máy</th>
+                  <th>Yêu cầu</th>
                   <th>Tiến độ</th>
-                  <th class="d-none d-md-table-cell"></th>
+                  <th class="d-none d-md-table-cell">Chức năng</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($tickets as $ticket)
-                <tr>
+                <tr class="text-center">
                   <td>{{$ticket->id}}</td>
-                  <td><a href="/tracking/{{$ticket->id}}">{{$ticket->model}}</a></td>
+                  <td>{{$ticket->model}}</td>
                   <td>
                     @if ($ticket->ticket_status_id == 5)
                     <span class="badge bg-success">HOÀN THÀNH</span>

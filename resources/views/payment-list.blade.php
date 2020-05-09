@@ -38,7 +38,6 @@
                 <tr>
                   <th>Thời gian</th>
                   <th>Phân loại</th>
-                  <th>Số lai</th>
                   <th>Người nộp</th>
                   <th>Nội dung</th>
                   <th>Số tiền</th>
@@ -50,7 +49,6 @@
                 <tr>
                   <td>{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>
                   <td><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
-                  <td>{{$data->number}}</td>
                   <td>{{$data->client->name}}</td>
                   <td>{{$data->content}}</td>
                   <td>{{number_format($data->amount,0,",",".")}} ₫</td>

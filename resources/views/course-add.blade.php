@@ -13,15 +13,17 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>THÊM LỚP DỰ ÁN MỚI</h1>
-        </div>
+        <div class="col-sm text-center">
+            <h1 class="text-primary"><b>THÊM DỰ ÁN MỚI</b></h1>
+          </div>
+         <!--
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập dự án</li>
+            <li class="breadcrumb-item active">Nhập Tên DỰ ÁN</li>
           </ol>
         </div>
+        -->
       </div>
     </div><!-- /.container-fluid -->
   </section>
@@ -40,29 +42,31 @@
         {{csrf_field()}}
         <div class="row">
           <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">Thêm dự án mới</h3>
+                <!--<h3 class="card-title">Thêm dự án mới</h3>-->
               </div>
               <div class="card-body">
                 <div class="col-md-12">
                   <div class="form-group col-md-12">
-                    <label>Tên dự án</label>
+                    <label>Tên Dự Án</label>
                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Mã dự án</label>
+                    <label>Mã Dự Án</label>
                     <input type="text" class="form-control" name="shortname" value="{{ old('shortname') }}" required autofocus>
                   </div>
+                  <!--
                   <div class="form-group col-md-12">
                       <div class="custom-control custom-checkbox">
                         <input type='hidden' value='0' name='is_expected'>
                         <input class="custom-control-input" name="is_expected"  type="checkbox" id="customCheckbox1" value="1">
-                        <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu đây là lớp dự kiến</label>
+                        <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu đây là dự kiến</label>
                       </div>
                   </div>
+                  -->
                   <hr>
-                  <div class="form-group col-md-12">
+                  <!--<div class="form-group col-md-12">
                     <label>Nhóm môn dự án</label>
                     <select name="course_group_id" class="select2" data-placeholder="Select a State" style="width: 100%;">
                       @foreach($course_groups as $data)
@@ -85,12 +89,12 @@
                       <option value="{{$data->id}}">{{$data->name}}</option>
                       @endforeach
                     </select>
-                  </div>
+                  </div>-->
                   <div class="form-group col-md-12">
                     <label>Thời gian thực hiện</label>
                     <input type="number" class="form-control" name="lesson" value="{{ old('lesson') }}" required>
                   </div>
-                  <div class="form-group col-md-12">
+                  <!--<div class="form-group col-md-12">
                     <label>Ngày nhận dự án</label>
                     <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{ old('opening_at') }}" required>
                   </div>
@@ -99,19 +103,19 @@
                     <input type="text" class="form-control" name="schedule" value="{{ old('schedule') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Sỉ số tối đa</label>
+                    <label>Số lượng Khách hàng</label>
                     <input type="number" class="form-control" name="maxseat" value="{{ old('maxseat') }}" required>
-                  </div>
+                  </div>-->
                   <div class="form-group col-md-12">
-                    <label>Chuyên viên thiết kế</label>
-                    <input type="text" class="form-control" name="teacher" value="{{ old('teacher') }}" required>
+                    <label>Người tạo</label>
+                    <input type="text" class="form-control" name="teacher" value="{{ UserInfo()->name }}" disabled>
                   </div>
                   <div class="form-group col-md-12">
                     <label>Kinh phí</label>
                     <input type="number" class="form-control" name="tuition" value="{{ old('tuition') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ghi chú (Chỉ chuyên viên thiết kế xem)</label>
+                    <label>Ghi chú</label>
                     <input type="text" class="form-control" name="note" value="{{ old('note') }}">
                   </div>
                 </div>

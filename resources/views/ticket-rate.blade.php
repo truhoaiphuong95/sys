@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Xem biên nhân #{{$ticket->id}}</title>
+<title>DELI | Xem biên nhân #{{$ticket->id}}</title>
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/iCheck/square/blue.css')}}">
 @stop

@@ -35,7 +35,7 @@
               <div class="col-12">
                 <h4>
                   <i class="fa fa-globe"></i>  <b>PHIẾU THU</b>
-                  <small class="float-right"><b>SỐ PHIẾU #{{ $receipt -> number }}</b></small>
+                  <small class="float-right"><b>SỐ PHIẾU #{{ $receipt -> id }}</b></small>
                 </h4>
               </div>
               <!-- /.col -->
@@ -47,7 +47,6 @@
                 <address>
                   <strong class="text-uppercase"><a href="{{route('staff.client.view.get', ['client_id'=>$receipt->client->id])}}">{{$receipt->client->name}}</a></strong><br>
                   <b>Số điện thoại: </b><a href="tel:{{$receipt->client->sdt}}">{{PhoneFormat($receipt->client->phone)}}</a><br>
-                  <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($receipt->client->birthday)) }}<br>
                   <b>Mã khách hàng:</b> {{ $receipt->client->id }}<br>
                   <b>Ngày lập phiếu:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
                   <b>Nhân viên lập:</b> {{ $receipt->staff->name }}

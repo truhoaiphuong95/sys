@@ -28,7 +28,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.techking.dashboard.get')}}" class="nav-link">DELI DESIGN</a>
+        <a href="https://deli4ne1.com/" class="nav-link">HOME DELI</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('staff.course.list.get')}}" class="nav-link">DỰ ÁN</a>
@@ -170,12 +170,12 @@
                   <p>Nhật ký</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a href="{{route('staff.feedback.list.get')}}" class="nav-link">
                   <i class="fa fa-heartbeat nav-icon"></i>
                   <p>Chăm sóc khách hàng</p>
                 </a>
-              </li>
+              </li>-->
             </ul>
           </li>
           <li class="nav-item has-treeview">
@@ -300,7 +300,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.0.0-alpha
     </div>
-    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2020 <a href="http://deli4ne1.com">DELI</a>.</strong> All rights
     reserved.
   </footer>
 </div>

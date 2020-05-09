@@ -38,7 +38,7 @@
       <form action="{{route('staff.course.edit.post', ['course_id' => $course->id])}}" method="post">
         {{csrf_field()}}
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6 offset-3">
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Sửa thông tin dự án</h3>
@@ -61,31 +61,31 @@
                     </div>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Thời gian thiết kế</label>
+                    <label>Thời gian thực hiện</label>
                     <input type="number" class="form-control" name="lesson" value="{{$course->lesson}}" required>
                   </div>
                   <div class="form-group col-md-12">
                     <label>Ngày bắt đầu</label>
                     <input type="date" min="2018-01-01" class="form-control" name="opening_at" value="{{date('Y-m-d', strtotime($course->opening_at))}}" required>
                   </div>
-                  <div class="form-group col-md-12">
+                  <!--<div class="form-group col-md-12">
                     <label>Lịch thiết kế</label>
                     <input type="text" class="form-control" name="schedule" value="{{$course->schedule}}" required>
-                  </div>
+                  </div>-->
                   <div class="form-group col-md-12">
-                    <label>Chuyên viên thiết kế</label>
+                    <label>Người tạo dự án</label>
                     <input type="text" class="form-control" name="teacher" value="{{$course->teacher}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Số lượng chuyên viên tham gia dự án</label>
+                    <label>Số lượng Khách hàng</label>
                     <input type="number" class="form-control" name="maxseat" value="{{$course->maxseat}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Kinh phí dự án</label>
+                    <label>Kinh phí</label>
                     <input type="number" class="form-control" name="tuition" value="{{$course->tuition}}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ghi chú (Chỉ chuyên viên thiết kế xem xem)</label>
+                    <label>Ghi chú</label>
                     <input type="text" class="form-control" name="note" value="{{$course->note}}">
                   </div>
                 </div>

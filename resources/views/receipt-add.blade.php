@@ -54,12 +54,8 @@
               <input name="client_id" type="hidden" class="form-control" value="{{ $client->id }}">
             </div>
             <div class="form-group">
-              <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
-            </div>
-            <div class="form-group">
               <label for="content">Nội dung thu:</label>
-              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Thu học phí THCB-K10" autofocus required>
+              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: thiết kế logo,..." autofocus required>
             </div>
             <div class="form-group">
               <label for="amount">Số tiền:</label>

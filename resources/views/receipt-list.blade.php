@@ -35,11 +35,10 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
+                <tr class="text-center">
                   <th>Thời gian</th>
-                  <th>Phân loại</th>
-                  <th>Số lai</th>
-                  <th>Người nộp</th>
+                    <th>Người nộp</th>
+                  <th>Chi nhánh | Danh mục</th>
                   <th>Nội dung</th>
                   <th>Số tiền</th>
                   <th></th>
@@ -48,13 +47,12 @@
                 <tbody>
                 @foreach($receipts->reverse() as $data)
                 <tr>
-                  <td>{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>
-                  <td><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
-                  <td>{{$data->number}}</td>
+                  <td class="text-center">{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>
                   <td>{{$data->client->name}}</td>
+                  <td><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
                   <td>{{$data->content}}</td>
-                  <td>{{number_format($data->amount,0,",",".")}} ₫</td>
-                  <td><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                  <td class="text-center">{{number_format($data->amount,0,",",".")}} ₫</td>
+                  <td class="text-center"><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach
                 </tfoot>

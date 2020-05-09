@@ -54,8 +54,7 @@
               <input name="client_id" type="hidden" class="form-control" value="{{$client->id}}">
             </div>
             <div class="form-group">
-              <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
+              <label for="id">Số lai:  </label>
             </div>
             <div class="form-group">
               <label for="content">Nội dung chi:</label>

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Thêm học viên</title>
+<title>DELI | Thêm khách hàng</title>
 <link rel="stylesheet" href="{{ asset('plugins/select2/select2.min.css') }}">
 @stop
   
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>THÊM HỌC VIÊN VÀO LỚP</h1>
+            <h1>THÊM KHÁCH HÀNG VÀO DỰ ÁN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Nhập lớp học</li>
+              <li class="breadcrumb-item active">Nhập dự án</li>
             </ol>
           </div>
         </div>
@@ -44,11 +44,11 @@
           <div class="card-body">
             <div class="col-md-12">
               <div class="form-group col-md-12">
-                <label>Tên học viên</label>
+                <label>Tên Khách hàng</label>
                 <input type="text" class="form-control" value="{{$client->name}}" disabled>
               </div>
               <div class="form-group col-md-12">
-                <label>Chọn lớp học</label>
+                <label>Chọn dự án</label>
                 <select name="course_id" class="form-control select2" style="width: 100%;">
                   @foreach($courses as $data)
                   @if($data->sum()<$data->maxseat)

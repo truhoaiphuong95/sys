@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>techKING Center | Theo dõi trình trạng máy</title>
+    <title>THIẾT KẾ DELI | Theo dõi tiến độ thiết kế</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -29,13 +29,15 @@
   <body class="hold-transition login-page">
     <div class="col-md-6 mx-auto my-5">
       <div class="login-logo">
-        <a href="/tracking"><b>techKING</b></a>
-        <h5>Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của techKING!</h5>
+        <a href="/tracking"><b>DELI</b>4ne1</a>
+        <h5 style="font-style: italic;">Cảm ơn Quý Khách hàng đã tin tưởng và sử dụng dịch vụ Thiết kế của <b>DELI</b>4ne1!</h5>
       </div>
       <!-- /.login-logo -->
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-0"></div>
+        <div class="col-lg-3 col-md-0">
+ 
+        </div>
       <div class="col-lg-6">
       @if (count($errors) > 0) 
       @foreach ($errors->all() as $error) 

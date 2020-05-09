@@ -125,8 +125,9 @@
 </head>
 
 <body>
-
-    <div id="invoice-POS">
+    <div class="row">
+        <div class="col-sm">
+            <div id="invoice-POS">
 
         <center id="top">
             <div class="info">
@@ -141,29 +142,29 @@
         <div id="mid">
             <div class="info">
                 <p>
-                    <span style="text-transform: uppercase; font-weight: bold">Kiểm tra tình trạng bằng mã QR code</span>
+                    <span style="text-transform: uppercase; font-weight: bold; text-align: center;">Theo dõi tiến độ thiết kế bằng MÃ QR</span>
                 </p>
             </div>
         </div>
         <!--End Invoice Mid-->
 
-        <center>{!! QrCode::size(150)->margin(0)->generate('http://crm.techking.vn/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6)) !!}</center><br>
+        <center>{!! QrCode::size(150)->margin(0)->generate('http://sys.deli4ne1.com/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6)) !!}</center><br>
         <div id="bot">
             <div id="table">
                 <table>
                     <tr class="service">
                         <table style="width:98%">
                             <tr>
-                                <td style="text-align: justify;">Quý khách có thể sử dụng ứng dụng Zalo hoặc ứng dụng quét QR Code bất kỳ.</td>
+                                <td style="text-align: justify;">Quý Khách sử dụng Zalo hoặc ứng dụng quét MÃ QR bất kỳ.</td>
                             </tr>
                             <tr>
                                 <td><br></td>
                             </tr>
                             <tr>
-                                <td style="text-align: justify;"><strong>Đường dẫn trực tiếp:</strong></td>
+                                <td style="text-align: justify;"><strong>Link trực tiếp:</strong></td>
                             </tr>
                             <tr>
-                                <td style="text-align: justify;">{!! '<i class="fa fa-globe"></i> crm.techking.vn<br>/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6) !!}</td>
+                                <td style="text-align: justify;">{!! '<i class="fa fa-globe"></i> sys.deli4ne1.com<br>/tracking/'.$ticket->id.'/'.substr($ticket->client->phone, -6) !!}</td>
                             </tr>
                         </table>
                     </tr>
@@ -176,10 +177,12 @@
                 </p>
             </div>
             <div id="legalcopy">
-                <center class="legal"><strong>SĐT: 085.540.6949<br>hoặc 0888.14.18.11</strong></center>
+                <center class="legal"><strong>SĐT: 094.294.7074<br>hoặc 097.151.7074</strong></center>
             </div>
         </div>
         <!--End InvoiceBot-->
+    </div>
+        </div>
     </div>
     <!--End Invoice-->
 </body>

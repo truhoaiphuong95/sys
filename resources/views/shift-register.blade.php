@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Đăng ký ca làm việc</title>
+<title>DELI | Đăng ký ca làm việc</title>
 <link rel="stylesheet" href="{{ asset('plugins/select2/select2.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/iCheck/all.css') }}">
 @stop
@@ -24,6 +24,18 @@
         </div>
       </div>
     </div><!-- /.container-fluid -->
+    <div class="container-fluid">
+      <div class="row mb-2 text-center">
+        <div class="col-sm">
+          <h1 class="text-info">THỜI GIAN LÀM VIỆC</h1>
+            <ul class="list-group">
+              <li class="list-group-item"><b>Buổi sáng: </b> 7h00 - 10h00</li>
+              <li class="list-group-item"><b>Buổi chiều: </b> 14h30 - 17h30</li>
+              <li class="list-group-item"><b>Buổi tối: </b> 19h30 - 22h30</li>
+            </ul>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- Main content -->
   <section class="content">

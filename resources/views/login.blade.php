@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>KING | Đăng nhập</title>
+  <title>DELI | Đăng nhập</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,19 +43,22 @@
         <div class="form-group has-feedback">
           <input type="password" name="password" class="form-control" placeholder="Mật khẩu">
         </div>
-        <div class="row">
+        <!--<div class="row">
           <div class="col-8">
-            <div class="checkbox icheck">
-              <label>
-                <input name="remember" type="checkbox"> Nhớ đăng nhập
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Nhớ đăng nhập
               </label>
             </div>
           </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
-          </div>
-          <!-- /.col -->
+        </div>-->
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary float-right" type="submit">Đăng nhập</button>
+            </div>
         </div>
       </form>
     </div>

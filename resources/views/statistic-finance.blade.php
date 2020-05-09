@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Thống kê tài chính</title>
+<title>DELI | Thống kê tài chính</title>
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
@@ -20,7 +20,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Thống kê kỹ thuật</h1>
+          <h1>THỐNG KÊ SỐ LƯỢNG THIẾT KẾ</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -39,7 +39,7 @@
         <div class="card">
           <div class="card-header no-border">
             <div class="d-flex justify-content-between">
-              <h3 class="card-title">Số lượng máy nhận năm 2020</h3>
+              <h3 class="card-title uppercaseText">SỐ LƯỢNG THIẾT KẾ NĂM 2020</h3>
             </div>
           </div>
           <div class="card-body">
@@ -58,7 +58,7 @@
                   <i class="fa fa-arrow-down"></i> {{ $ticket_growth }}%
                 </span>
                 @endif
-                <span class="text-muted">So với tháng trước</span>
+                <span class="text-muted">SO VỚI THÁNG TRƯỚC</span>
               </p>
             </div>
             <!-- /.d-flex -->
@@ -69,7 +69,7 @@
 
             <div class="d-flex flex-row justify-content-end">
               <span class="mr-2">
-                <i class="fa fa-square text-primary"></i> Số lượng biên nhận kỹ thuật
+                <i class="fa fa-square text-primary"></i> SỐ LƯỢNG BIÊN NHẬN THIẾT KẾ
               </span>
             </div>
           </div>
@@ -80,14 +80,14 @@
         <div class="card">
           <div class="card-header no-border">
             <div class="d-flex justify-content-between">
-              <h3 class="card-title">Số lượng học viên đăng ký năm 2020</h3>
+              <h3 class="card-title">SỐ LƯỢNG KHÁCH HÀNG NĂM 2020</h3>
             </div>
           </div>
           <div class="card-body">
             <div class="d-flex">
               <p class="d-flex flex-column">
                 <span class="text-bold text-lg">{{ $student_sum }}</span>
-                <span>Lượt trong năm nay</span>
+                <span>KHÁCH HÀNG NĂM NAY</span>
               </p>
               <p class="ml-auto d-flex flex-column text-right">
                 @if ($student_growth>0)
@@ -99,7 +99,7 @@
                   <i class="fa fa-arrow-down"></i> {{ $student_growth }}%
                 </span>
                 @endif
-                <span class="text-muted">So với tháng trước</span>
+                <span class="text-muted">SO VỚI THÁNG TRƯỚC</span>
               </p>
             </div>
             <!-- /.d-flex -->
@@ -110,7 +110,7 @@
 
             <div class="d-flex flex-row justify-content-end">
               <span class="mr-2">
-                <i class="fa fa-square text-primary"></i> Số lượng biên nhận kỹ thuật
+                <i class="fa fa-square text-primary"></i> SỐ LƯỢNG NHÂN VIÊN THIẾT KẾ
               </span>
             </div>
           </div>
@@ -123,14 +123,14 @@
         <div class="card">
           <div class="card-header no-border">
             <div class="d-flex justify-content-between">
-              <h3 class="card-title">Tài chính {{$field->name}} năm 2020</h3>
+              <h3 class="card-title uppercaseText">TÀI CHÍNH {{$field->name}} NĂM 2020</h3>
             </div>
           </div>
           <div class="card-body">
             <div class="d-flex">
               <p class="d-flex flex-column">
                 <span class="text-bold text-lg"><span class="text-success">{{ MoneyFormat($receipt_sum[$f]) }}</span><span class="text-danger"> - {{ MoneyFormat($payment_sum[$f]) }}</span> = {{ MoneyFormat($receipt_sum[$f]-$payment_sum[$f]) }}</span>
-                <span>Doanh thu - Chi phí = Lợi nhuận</span>
+                <span>DOANH THU - CHI PHÍ = LỢI NHUẬN</span>
               </p>
               <p class="ml-auto d-flex flex-column text-right">
                 @if ($receipt_growth[$f]>0)
@@ -142,7 +142,7 @@
                   <i class="fa fa-arrow-down"></i> {{ $receipt_growth[$f] }}%
                 </span>
                 @endif
-                <span class="text-muted">So với tháng trước</span>
+                <span class="text-muted">SO VỚI THÁNG TRƯỚC</span>
               </p>
             </div>
             <!-- /.d-flex -->
@@ -153,9 +153,9 @@
 
             <div class="d-flex flex-row justify-content-end">
               <span class="mr-2">
-                <i class="fa fa-square text-success"></i> Thu
-                <i class="fa fa-square text-danger"></i> Chi
-                <i class="fa fa-square text-primary"></i> Lợi nhuận
+                <i class="fa fa-square text-success"></i> THU
+                <i class="fa fa-square text-danger"></i> CHI
+                <i class="fa fa-square text-primary"></i> LỢI NHUẬN
               </span>
             </div>
           </div>
@@ -235,9 +235,9 @@
             @endforeach
           ],
           backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          pointBorderColor: '#007bff',
-          pointBackgroundColor: '#007bff',
+          borderColor: '#536271',
+          pointBorderColor: '#536271',
+          pointBackgroundColor: '#536271',
           fill: false
           // pointHoverBackgroundColor: '#007bff',
           // pointHoverBorderColor    : '#007bff'

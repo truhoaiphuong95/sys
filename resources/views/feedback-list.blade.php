@@ -57,7 +57,6 @@
                   <td>{{$ticket->id}}</td>
                   <td>{{$ticket->client->name}}</td>
                   <td>{{$ticket->requestment}}</td>
-                  <td>{{$ticket->feedback->content or 'Chưa có'}}</td>
                   <td><a href="{{route('staff.ticket.view.get', ['case_id' => $ticket->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach

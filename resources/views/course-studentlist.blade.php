@@ -21,12 +21,12 @@
       @endif
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>DANH SÁCH NHÂN VIÊN THIẾT KẾ NHẬN DỰ ÁN</h1>
+          <h1>DANH SÁCH KHÁCH HÀNG THIẾT KẾ</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Danh sách nhân viên thiết kế nhận dự án</li>
+            <li class="breadcrumb-item active">Danh sách Khách hàng thiết kế</li>
           </ol>
         </div>
       </div>
@@ -45,7 +45,7 @@
             </div>
             <!-- /.widget-user-image -->
             <h3 class="widget-user-username">{{$course->name}}</h3>
-            <h5 class="widget-user-desc">{{$course->schedule}}</h5>
+            <!--<h5 class="widget-user-desc">{{$course->schedule}}</h5>-->
           </div>
           <div class="card-footer p-0">
             <ul class="nav flex-column">
@@ -59,14 +59,16 @@
                   Kinh phí <span class="float-right">{{$course->tuition}}</span>
                 </div>
               </li>
+              <!--
               <li class="nav-item">
                 <div class="nav-link">
                   Thời gian thiết kế <span class="float-right">{{$course->lesson}}</span>
                 </div>
               </li>
+              -->
               <li class="nav-item">
                 <div class="nav-link">
-                  Chuyên viên thiết kế <span class="float-right">{{$course->teacher}}</span>
+                  Người tạo dự án <span class="float-right">{{ UserInfo()->name}}</span>
                 </div>
               </li>
             </ul>
@@ -79,7 +81,7 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <div class="nav-link">
-                  Đăng ký <span class="float-right">{{ $course->sum() }}</span>
+                  Số lượng khách hàng <span class="float-right">{{ $course->sum() }}</span>
                 </div>
               </li>
               <li class="nav-item">
@@ -94,14 +96,14 @@
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Tối đa <span class="float-right">{{ $course->maxseat }}</span>
+                  Số lượng mục tiêu KH <span class="float-right">{{ $course->maxseat }}</span>
                 </div>
               </li>
             </ul>
           </div>
           <div class="card-footer">
             <div class="btn-group float-right">
-              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin lớp</a>
+              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin dự án</a>
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>

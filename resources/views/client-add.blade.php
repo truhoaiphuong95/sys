@@ -34,9 +34,9 @@
     @endif
     
       <!-- general form elements -->
-            <div class="card card-primary">
+            <div class="col-sm card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Sửa thông tin khách hàng</h3>
+                <h3 class="card-title">Sửa thông tin Khách hàng</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -68,14 +68,14 @@
                     <input name="email" type="text" class="form-control" id="email" placeholder="Địa chỉ thư điện tử" >
                   </div>
                   <div class="form-group">
-                    <label for="major">Ngành nghề - Công việc:</label>
-                    <input name="major" type="text" class="form-control" id="major" placeholder="Ngành học/trường học" >
+                    <label for="major">Doanh nghiệp:</label>
+                    <input name="major" type="text" class="form-control" id="major" placeholder="Nghề nghiệp hoặc tên doanh nghiệp" >
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm vào</button>
+                  <button type="submit" class="btn btn-primary">Thêm Khách hàng</button>
                   <a onclick="history.go(-1);" class="btn">Quay lại</a>
                 </div>
               </form>
