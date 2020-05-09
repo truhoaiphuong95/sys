@@ -20,7 +20,6 @@
         <div class="row mb-2">
           <div class="col-sm text-center">
             <h1 class="text-primary">YÊU CẦU THIẾT KẾ</h1>
-            TEST COI NÓ NTN
           </div>
           <!--<div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -30,6 +29,19 @@
           </div>-->
         </div>
       </div><!-- /.container-fluid -->
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm text-center">
+            <h1 class="text-primary">YÊU CẦU THIẾT KẾ</h1>
+          </div>
+          <!--<div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Yêu cầu thiết kế</li>
+            </ol>
+          </div>-->
+        </div>
+      </div>
     </section>
 
     <!-- Main content -->
