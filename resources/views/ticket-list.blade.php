@@ -44,8 +44,8 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr class="text-center">
-                  <th>CUSTOMER</th>
-                  <th>CONTENT</th>
+                  <th>Khách hàng</th>
+                  <th>Nội dung</th>
                 </tr>
                 </thead>
                 <tbody>
