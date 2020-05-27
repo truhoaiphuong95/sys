@@ -20,6 +20,10 @@ class ClientController extends Controller
         return view('client-list', $data);
     }
     
+    public function getNoiQuy(){
+        return view('client-noiquy');
+    }
+
     public function getView($client_id) {
         $data['client'] = $this->service->getView($client_id);
         return view('client-view', $data);

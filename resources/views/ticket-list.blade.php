@@ -19,7 +19,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm text-center">
-            <h1 class="text-primary">YÊU CẦU THIẾT KẾ</h1>
+            <h1 class="text-success">YÊU CẦU THIẾT KẾ</h1>
           </div>
           <!--<div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

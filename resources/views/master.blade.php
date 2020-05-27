@@ -92,6 +92,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="{{route('staff.client.noiquy.get')}}" class="nav-link">
+                  <i class="fa nav-icon fa fa-users nav-icon"></i>
+                  <p>Nội Quy</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('staff.client.list.get')}}" class="nav-link">
                   <i class="fa nav-icon fa fa-users nav-icon"></i>
                   <p>Danh bạ khách</p>
@@ -230,6 +236,7 @@
               </li>
             </ul>
           </li>
+          @if(UserInfo()->level>=3)
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-money"></i>
@@ -255,6 +262,7 @@
             <ul class="nav nav-treeview">
             </ul>
           </li>
+          @endif
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-link"></i>

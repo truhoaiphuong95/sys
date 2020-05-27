@@ -42,6 +42,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
     Route::group(['prefix' => 'clients'], function() 
     {
         Route::get('/', 'ClientController@getList')->name('staff.client.list.get');
+        Route::get('noiquy', 'ClientController@getNoiQuy')->name('staff.client.noiquy.get');
         Route::get('/search', 'ClientController@getSearch')->name('staff.client.search.get');
         Route::post('/search', 'ClientController@postSearch')->name('staff.client.search.post');
         Route::get('/{client_id}', 'ClientController@getView')->name('staff.client.view.get');
@@ -118,6 +119,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
     {
         Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get');
     });
+
     Route::group(['prefix' => 'feedbacks'], function() 
     {
         Route::get('/', 'FeedbackController@getList')->name('staff.feedback.list.get');
