@@ -49,7 +49,7 @@
                       <hr>
                       Zalo: <a href="https://zalo.me/{{$data->zalo}}"> {{$data->zalo}} </a> <br>
                       <hr>
-                      {!!$data->email !!}
+                      Mail: {!!$data->email !!}
                   </td>
                 </tr>
                 @endforeach
