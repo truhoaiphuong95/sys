@@ -26,7 +26,7 @@
     <!-- Main content -->
     <section class="content">
       <div class="row offset-3">
-        <div class="col-8">
+        <div class="col-8 col-sm">
           <div class="card">
             <!--<div class="card-header">
               <h3 class="card-title">Danh sách khách hàng</h3>
