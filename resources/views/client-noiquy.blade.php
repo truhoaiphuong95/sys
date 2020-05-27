@@ -11,59 +11,70 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm text-center">
-            <h1 class="text-success"><b>NỘI QUY DELI</b></h1>
+            <h1 class="text-success"><b>NỘI QUY DELI 2020</b></h1>
           </div>
-          <!--<div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Danh sách khách hàng</li>
-            </ol>
-          </div>-->
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-
     <!-- Main content -->
     <section class="content">
-      <div class="row">
-        <div class="col-12 col-sm-12">
+      <div class="row offset-4">
+        <div class="col-6">
           <div class="card">
             <div class="card-body">
-              <b>Thời gian làm việc trong ngày</b><br>
-              - Sáng: 7h30 - 11h30<br>
-              - Chiều: 13h30 - 17h30<br>
-              - Tối: 17h30 - 21h30<br>
+              <b class="text-uppercase text-success">Thời gian làm việc trong ngày</b><br>
+              - <b>Sáng:</b> 7h30 - 11h30<br>
+              - <b>Chiều:</b> 13h30 - 17h30<br>
+              - <b>Tối:</b> 17h30 - 21h30<br>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <b>I. Đối với Công việc</b><br>
-              - Đúng giờ<br>
-              - Đúng đồng phục<br>
+              <b class="text-uppercase text-warning">I. Đối với Công việc</b><br>
+              <b>3 Đúng</b><br>
+              - Đúng deadline<br>
+              - Đúng tác phong<br>
               - Đúng việc<br>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <b>II. Đối với Khách Hàng</b><br>
+              <b class="text-uppercase text-warning">II. Đối với Khách Hàng</b><br>
+              <b>3 Nên</b><br>
+              - Nên tôn trọng<br>
+              - Nên hòa nhã<br>
+              - Nên tư vấn hết mình<br>
+              <b>3 Không</b><br>
+              - Không đánh Khách hàng<br>
+              - Không chửi Khách hàng<br>
+              - Không cãi Khách hàng<br>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <b>III. Đối với Đồng nghiệp</b><br>
+              <b class="text-uppercase text-warning">III. Đối với Đồng nghiệp</b><br>
+              <b>3 Phải</b><br>
+              - Phải tôn trọng - hỗ trợ - góp ý<br>
+              - Phải vui vẻ - hòa đồng - thân tình<br>
+              - Phải đoàn kết<br>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <b class="text-uppercase text-warning">IV. Sai </b><br>
+              <b>3 Sai</b><br>
+              - Sai việc<br>
+              - Sai trái<br>
+              - Sai lầm<br>
             </div>
           </div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
     </section>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
 @stop
 
 @section('script')

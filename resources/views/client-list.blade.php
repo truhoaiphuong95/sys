@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm text-center">
-            <h1 class="text-primary"><b>DANH SÁCH KHÁCH HÀNG</b></h1>
+            <h1 class="text-uppercase text-info"><b>DANH SÁCH KHÁCH HÀNG</b></h1>
           </div>
           <!--<div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -25,8 +25,8 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="row">
-        <div class="col-12 col-sm-12">
+      <div class="row offset-3">
+        <div class="col-8">
           <div class="card">
             <!--<div class="card-header">
               <h3 class="card-title">Danh sách khách hàng</h3>
@@ -36,7 +36,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr class="text-center">
-                  <th>CUSTOMER</th>
+                  <th class="text-uppercase">Thông tin Khách hàng</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,7 +45,9 @@
                   <td>
                       <b class="text-uppercase text-danger">{{$data->id}}: {!!$data->linkName()!!}</b><br>
                       <hr>
-                      {!!$data->linkPhone()!!}<br>
+                      Phone: {!!$data->linkPhone()!!}<br>
+                      <hr>
+                      Zalo: <a href="https://zalo.me/{{$data->zalo}}"> {{$data->zalo}} </a> <br>
                       <hr>
                       {!!$data->email !!}
                   </td>
