@@ -36,7 +36,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr class="text-center">
-                  <th class="text-uppercase">Thông tin Khách hàng</th>
+                  <th class="text-uppercase text-success">Thông tin Khách hàng</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,11 +45,11 @@
                   <td>
                       <b class="text-uppercase text-danger">{{$data->id}}: {!!$data->linkName()!!}</b><br>
                       <hr>
-                      Phone: {!!$data->linkPhone()!!}<br>
+                      <b class="text-success">Phone:</b> {!!$data->linkPhone()!!}<br>
                       <hr>
-                      Zalo: <a href="https://zalo.me/{{$data->zalo}}"> {{$data->zalo}} </a> <br>
+                      <b class="text-success">Zalo:</b> <a href="https://zalo.me/{{$data->zalo}}"> {{$data->zalo}} </a> <br>
                       <hr>
-                      Mail: {!!$data->email !!}
+                      <b class="text-success">Mail:</b> <a href="mailto:{{$data->email}}"> {!!$data->email !!} </a>
                   </td>
                 </tr>
                 @endforeach
