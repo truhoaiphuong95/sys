@@ -92,12 +92,6 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('staff.client.noiquy.get')}}" class="nav-link">
-                  <i class="fa nav-icon fa fa-users nav-icon"></i>
-                  <p>Nội Quy</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{route('staff.client.list.get')}}" class="nav-link">
                   <i class="fa nav-icon fa fa-users nav-icon"></i>
                   <p>Danh bạ khách</p>
@@ -123,6 +117,12 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('staff.client.noiquy.get')}}" class="nav-link">
+                  <i class="fa nav-icon fa fa-users nav-icon"></i>
+                  <p>Nội Quy</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{route('staff.worklog.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
