@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm text-center">
-            <h1 class="text-uppercase text-info"><b>DANH SÁCH KHÁCH HÀNG</b></h1>
+            <h1 class="text-uppercase text-success"><b>DANH SÁCH KHÁCH HÀNG</b></h1>
           </div>
           <!--<div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -31,7 +31,7 @@
             <!--<div class="card-header">
               <h3 class="card-title">Danh sách khách hàng</h3>
             </div>-->
-            <!-- /.card-header -->
+            <!-- /.card-header -->  
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -47,9 +47,9 @@
                       <hr>
                       <b class="text-success">Phone:</b> {!!$data->linkPhone()!!}<br>
                       <hr>
-                      <b class="text-success">Zalo:</b> <a href="https://zalo.me/{{$data->zalo}}"> {{$data->zalo}} </a> <br>
+                      <b class="text-success">Zalo:</b> <a class="text-dark" href="https://zalo.me/{{$data->zalo}}"> {{$data->zalo}} </a> <br>
                       <hr>
-                      <b class="text-success">Mail:</b> <a href="mailto:{{$data->email}}"> {!!$data->email !!} </a>
+                      <b class="text-success">Mail:</b> <a class="text-dark" href="mailto:{{$data->email}}"> {!!$data->email !!} </a>
                   </td>
                 </tr>
                 @endforeach

@@ -21,9 +21,9 @@ Route::get('/customer/{client_id}', 'TrackingController@getByClient')->name('gue
 
 Route::get('/login','LoginController@getLogin')->name('guest.login.get');
 Route::post('/login','LoginController@postLogin')->name('guest.login.post');
-
 Route::group(['prefix' => '','middleware' => 'staff'], function() 
 {
+    Route::get('/','DashboardController@getView')->name('staff.dashboard.view.get');
     Route::get('/checkauth', function ()
     {
         return 'Loged in successed!';
@@ -31,7 +31,6 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
     Route::get('/afterlogin','LoginController@getAfterLogin')->name('staff.afterlogin.get');
     Route::get('/logout','LoginController@getLogout')->name('staff.logout.get');
     
-    Route::get('/', function() { return redirect()->route('staff.ticket.list.get'); })->name('staff.home.get');
     Route::get('/search', 'SearchController@getSearch')->name('staff.search.get');
 
     Route::group(['prefix' => 'techking'], function() 
@@ -42,7 +41,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
     Route::group(['prefix' => 'clients'], function() 
     {
         Route::get('/', 'ClientController@getList')->name('staff.client.list.get');
-        Route::get('noiquy', 'ClientController@getNoiQuy')->name('staff.client.noiquy.get');
+        Route::get('/noiquy', 'ClientController@getNoiQuy')->name('staff.client.noiquy.get');
         Route::get('/search', 'ClientController@getSearch')->name('staff.client.search.get');
         Route::post('/search', 'ClientController@postSearch')->name('staff.client.search.post');
         Route::get('/{client_id}', 'ClientController@getView')->name('staff.client.view.get');
@@ -61,7 +60,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/{field_id}', 'FinancialController@getField');
     });
 
-    Route::group(['prefix' => 'receipts'], function ()
+    Route::prefix('receipts')->middleware('official')->group(function ()
     {
         Route::get('/', 'ReceiptController@getList')->name('staff.receipt.list.get');
         Route::get('/field/{field_id}', 'ReceiptController@getListbyField')->name('staff.receipt.listbyfield.get');
@@ -74,7 +73,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/destroy/{receipt_id}', 'ReceiptController@getDestroy')->name('staff.receipt.destroy.get')->middleware('manager');
     });
 
-    Route::group(['prefix' => 'payments'], function ()
+    Route::prefix('payments')->middleware('official')->group(function ()
     {
         Route::get('/', 'PaymentController@getList')->name('staff.payment.list.get');
         Route::get('/{payment_id}', 'PaymentController@getView')->name('staff.payment.view.get');
@@ -117,9 +116,8 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
 
     Route::group(['prefix' => 'statistic'], function() 
     {
-        Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get');
+        Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get')->middleware('official');
     });
-
     Route::group(['prefix' => 'feedbacks'], function() 
     {
         Route::get('/', 'FeedbackController@getList')->name('staff.feedback.list.get');
