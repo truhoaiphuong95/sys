@@ -77,9 +77,9 @@
         <a href="{{route('staff.shift.register.get')}}">
         <div class="small-box bg-warning">
           <div class="inner" style="padding: 10px;">
-            <h3>Đăng ký ca</h3>
+            <h3>Lịch làm</h3>
 
-            <p>Đăng ký ca làm việc cho tuần sau</p>
+            <p>Đăng ký lịch làm việc cho tuần sau</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
@@ -113,8 +113,8 @@
     </div>
     @if(UserInfo()->level>=2)
     <div class="row">
-      <div class="col-6">
-        <h3>QUẢN LÝ NHANH</h3>
+      <div class="col-sm">
+        <h3 class="text-center text-success">QUẢN LÝ NHANH</h3>
       </div>
     </div>
     <div class="row">
@@ -142,7 +142,7 @@
         <a href="{{route('staff.payment.list.get')}}">
         <div class="small-box bg-success">
           <div class="inner" style="padding: 10px;">
-            <h3>Xem phiếu chi</h3>
+            <h3>Phiếu chi</h3>
             <p>Xem danh sách biên nhận</p>
           </div>
           <div class="icon">
@@ -160,9 +160,9 @@
         <a href="{{route('staff.shift.manager.get')}}">
         <div class="small-box bg-warning">
           <div class="inner" style="padding: 10px;">
-            <h3>Xếp ca làm việc</h3>
+            <h3>Sắp lịch</h3>
 
-            <p>Xếp lịch cho tuần sau</p>
+            <p>Sắp lịch cho tuần sau</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
@@ -179,7 +179,7 @@
         <a href="{{route('staff.worklog.list.get')}}">
         <div class="small-box bg-danger">
           <div class="inner" style="padding: 10px;">
-            <h3>Xem báo cáo</h3>
+            <h3>Báo cáo</h3>
 
             <p>Xem báo cáo công việc</p>
           </div>
