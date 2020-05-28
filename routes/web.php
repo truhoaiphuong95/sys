@@ -60,7 +60,8 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/{field_id}', 'FinancialController@getField');
     });
 
-    Route::prefix('receipts')->middleware('official')->group(function ()
+    Route::group(['prefix' => 'receipts'], function()
+    //Route::prefix('receipts')->middleware('official')->group(function ()
     {
         Route::get('/', 'ReceiptController@getList')->name('staff.receipt.list.get');
         Route::get('/field/{field_id}', 'ReceiptController@getListbyField')->name('staff.receipt.listbyfield.get');
@@ -73,7 +74,8 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/destroy/{receipt_id}', 'ReceiptController@getDestroy')->name('staff.receipt.destroy.get')->middleware('manager');
     });
 
-    Route::prefix('payments')->middleware('official')->group(function ()
+    Route::group(['prefix' => 'payments'], function()
+    //Route::prefix('payments')->middleware('official')->group(function ()
     {
         Route::get('/', 'PaymentController@getList')->name('staff.payment.list.get');
         Route::get('/{payment_id}', 'PaymentController@getView')->name('staff.payment.view.get');
