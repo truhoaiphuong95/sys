@@ -126,6 +126,12 @@
               <li class="nav-item">
                 <a href="{{route('staff.worklog.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
+                  <p>Note Bình - Phương</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="note/add" class="nav-link">
+                  <i class="fa fa-plus nav-icon"></i>
                   <p>Nộp báo cáo</p>
                 </a>
               </li>

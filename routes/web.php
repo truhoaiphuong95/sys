@@ -190,4 +190,14 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/manager', 'ShiftController@getManager')->name('staff.shift.manager.get')->middleware('manager');
         Route::post('/manager', 'ShiftController@postManager')->name('staff.shift.manager.post')->middleware('manager');
     });
+
+    // Báo cáo nhân sự
+    Route::group(['prefix' => 'note'], function ()
+    {
+        Route::get('/', 'NoteController@getList');
+        Route::get('/add', 'NoteController@getAdd');
+        Route::post('/add', 'NoteController@postAdd');
+        Route::get('/edit/{note_id}', 'NoteController@getEdit');
+        Route::post('/edit/{note_id}', 'NoteController@postEdit');
+    });
 });
