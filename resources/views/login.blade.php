@@ -22,6 +22,7 @@
 <div class="login-box">
   <div class="login-logo">
     <a href="./"><b>DELI</b> SYSTEM</a>
+    <b>Xin chào</b>
   </div>
   <!-- /.login-logo -->
   <div class="card">
