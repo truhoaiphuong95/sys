@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DELI | Thống kê tài chính</title>
+<title>AIKIDO VIỆT NAM | Thống kê tài chính</title>
 <link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
@@ -19,15 +19,15 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>THỐNG KÊ SỐ LƯỢNG THIẾT KẾ</h1>
+        <div class="col-sm">
+          <h1 class="text-center text-info">THỐNG KÊ TÀI CHÍNH</h1>
         </div>
-        <div class="col-sm-6">
+        <!--<div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
             <li class="breadcrumb-item active">Thống kê</li>
           </ol>
-        </div>
+        </div>-->
       </div>
     </div><!-- /.container-fluid -->
   </section>

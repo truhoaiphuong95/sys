@@ -37,7 +37,7 @@
                 <thead>
                 <tr class="text-center">
                   <th>Thời gian</th>
-                    <th>Người nộp</th>
+                <th>Người nộp</th>
                   <th>Chi nhánh | Danh mục</th>
                   <th>Nội dung</th>
                   <th>Số tiền</th>
@@ -49,7 +49,7 @@
                 <tr>
                   <td class="text-center">{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>
                   <td>{{$data->client->name}}</td>
-                  <td><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
+                  <td class="text-center"><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
                   <td>{{$data->content}}</td>
                   <td class="text-center">{{number_format($data->amount,0,",",".")}} ₫</td>
                   <td class="text-center"><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>

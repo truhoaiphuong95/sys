@@ -99,10 +99,10 @@
             <div class="row">
               <div class="col-12">
                 <address>
-                  <h5 class="text-uppercase text-center"><b>Yêu cầu khách hàng:</b><br> 
-                  @foreach($ticket->services as $service)
-                  {{$service->name}}<br> 
-                  @endforeach
+                  <h5 class="text-uppercase text-center"><b>Yêu cầu khách hàng:</b>
+                  <b class="text-danger">@foreach($ticket->services as $service)
+                  {{$service->name}}
+                  @endforeach</b>
                   </h5>
                 </address>
               </div>
@@ -113,11 +113,11 @@
               <div class="col-12 table-responsive">
                 <table class="table table-striped table table-bordered">
                   <tbody>
-                    <tr>
+                    <!--<tr>
                       <td class="text-uppercase" style="width: 20%"><b>Nội dung: </b></h5>
                       </td>
                       <td class="text-uppercase">{{ $ticket -> model }}</h5>
-                      </td>
+                      </td>-->
                     </tr>
                     <tr>
                       <td class="text-uppercase" style="width: 20%"><b>Màu sắc: </b></h5>
@@ -164,7 +164,6 @@
               <div class="col-12">
                 <a href="{{ route('staff.ticket.printpos.get', ['ticket_id' => $ticket->id]) }}" target="_blank" class="btn btn-primary" id="btnIn"><i class="fa fa-print"></i>&nbsp;&nbsp;MÃ QR</a>
                 <a href="{{ route('staff.ticket.edit.get', ['ticket_id' => $ticket->id]) }}" class="btn btn-default">Sửa biên nhận</a>
-                <!--
                 <div class="btn-group float-right">
                   <a href="{{ route('staff.ticket.printpos.get', ['ticket_id' => $ticket->id]) }}" target="_blank" class="btn btn-primary" id="btnIn"><i class="fa fa-print"></i>&nbsp;&nbsp;IN MÁY POS</a>
                   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -177,7 +176,6 @@
                 </div>
                 
                 <a href="{{ route('staff.ticket.printinternal.get', ['ticket_id' => $ticket->id]) }}" target="_blank" class="btn btn float-right"><i class="fa fa-print"></i>&nbsp;&nbsp;IN PHIẾU DÁN</a>
-                -->
               </div>
             </div>
           </div>

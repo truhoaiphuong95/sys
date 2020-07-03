@@ -118,7 +118,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
 
     Route::group(['prefix' => 'statistic'], function() 
     {
-        Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get')->middleware('official');
+        Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get');
     });
     Route::group(['prefix' => 'feedbacks'], function() 
     {
