@@ -6,7 +6,6 @@
   .pagination li {
     padding: 10px;
   }
-
   .pagination {
     float: right;
   }
@@ -20,7 +19,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm">
-          <h1 class="text-center text-success">TRUY CẬP NHANH</h1>
+          <h1 class="text-center text-success"><b>TRUY CẬP NHANH</b></h1>
         </div>
         <!--<div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -30,8 +29,8 @@
         </div>-->
       </div>
     </div><!-- /.container-fluid -->
+    <hr>
   </section>
-
   <!-- Main content -->
   <section class="content">
     <div class="row">
@@ -41,8 +40,7 @@
         <div class="small-box bg-info">
           <div class="inner" style="padding: 10px;">
             <h3>Dự án</h3>
-
-            <p>Xem danh sách dự án</p>
+            <p>Danh sách dự án</p>
           </div>
           <div class="icon">
             <i class="fa fa-shopping-cart"></i>
@@ -60,7 +58,7 @@
         <div class="small-box bg-success">
           <div class="inner" style="padding: 10px;">
             <h3>Thiết kế</h3>
-            <p>Xem danh sách yêu cầu thiết kế</p>
+            <p>Danh sách thiết kế</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -78,8 +76,7 @@
         <div class="small-box bg-warning">
           <div class="inner" style="padding: 10px;">
             <h3>Lịch làm</h3>
-
-            <p>Đăng ký lịch làm việc cho tuần sau</p>
+            <p>Đăng ký lịch</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
@@ -97,8 +94,7 @@
         <div class="small-box bg-danger">
           <div class="inner" style="padding: 10px;">
             <h3>Báo cáo</h3>
-
-            <p>Nộp báo cáo công việc</p>
+            <p>Nộp báo cáo</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
@@ -111,21 +107,22 @@
       </div>
       <!-- ./col -->
     </div>
-    @if(UserInfo()->level>=2)
+    @if(UserInfo()->level>=5)
+    <hr>
     <div class="row">
       <div class="col-sm">
-        <h3 class="text-center text-success">QUẢN LÝ NHANH</h3>
+        <h3 class="text-center text-success"><b>QUẢN LÝ NHANH</b></h3>
       </div>
     </div>
+    <hr>
     <div class="row">
       <div class="col-lg-3 col-6">
         <!-- small card -->
         <a href="{{route('staff.receipt.list.get')}}">
         <div class="small-box bg-info">
           <div class="inner" style="padding: 10px;">
-            <h3>Phiếu thu</h3>
-
-            <p>Xem danh sách dự án</p>
+            <h3>Thu</h3>
+            <p>Danh sách thu</p>
           </div>
           <div class="icon">
             <i class="fa fa-shopping-cart"></i>
@@ -142,8 +139,8 @@
         <a href="{{route('staff.payment.list.get')}}">
         <div class="small-box bg-success">
           <div class="inner" style="padding: 10px;">
-            <h3>Phiếu chi</h3>
-            <p>Xem danh sách biên nhận</p>
+            <h3>Chi</h3>
+            <p>Danh sách chi</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -162,7 +159,7 @@
           <div class="inner" style="padding: 10px;">
             <h3>Sắp lịch</h3>
 
-            <p>Sắp lịch cho tuần sau</p>
+            <p>Sắp lịch trực</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
@@ -181,7 +178,7 @@
           <div class="inner" style="padding: 10px;">
             <h3>Báo cáo</h3>
 
-            <p>Xem báo cáo công việc</p>
+            <p>Xem báo cáo</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
