@@ -103,7 +103,7 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                  <tr>
+                  <tr class="text-center">
                     <th>Ngày/Tháng</th>
                     <th>Số phiếu</th>
                     <th>Nội dung</th>
@@ -113,9 +113,9 @@
                 </thead>
                 <tbody>
                   @foreach($client->tickets as $data)
-                  <tr class="text-center">
-                    <td>{{date("d/m/Y", strtotime($data->created_at))}}</td>
-                    <td>{{$data->id}}</td>
+                  <tr>
+                    <td class="text-center">{{date("d/m/Y", strtotime($data->created_at))}}</td>
+                    <td class="text-center">{{$data->id}}</td>
                     <td>{{$data->model}}</td>
                     <td>
                       <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
@@ -138,7 +138,7 @@
               <table id="example2" class="table table-bordered table-striped">
                 <thead>
                   <tr class="text-center">
-                    <th>Tên lớp</th>
+                    <th>Tên sản phẩm</th>
                     <th>Ưu đãi</th>
                     <th>Báo giá</th>
                     <th>Đã thu</th>
@@ -150,10 +150,11 @@
                   @foreach($client->courseStudents as $data)
                   <tr>
                     <td>{!!$data->course->linkName()!!}</td>
-                    <td>{{$data->deal_rate}}%</td>
-                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>
-                    <td>{{MoneyFormat($data->tuition_done)}}</td>
-                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
+                    <td class="text-center">{{$data->deal_rate}}%</td>
+                    <!--<td class="text-center">{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>-->
+                    <td class="text-center">{{MoneyFormat($data->course->tuition)}}</td>
+                    <td class="text-center">{{MoneyFormat($data->tuition_done)}}</td>
+                    <td class="text-center">{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
                     <td class="text-center"><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
                   </tr>
                   @endforeach
