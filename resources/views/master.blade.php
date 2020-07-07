@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   @yield('head')
-  <title>KING | Blank Page</title>
+  <title>DELI | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -31,10 +31,10 @@
         <a href="{{route('staff.dashboard.view.get')}}" class="nav-link">Trang chủ</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.course.list.get')}}" class="nav-link">Khoá học</a>
+        <a href="{{route('staff.course.list.get')}}" class="nav-link">Dự án</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.ticket.list.get')}}" class="nav-link">Kỹ thuật</a>
+        <a href="{{route('staff.ticket.list.get')}}" class="nav-link">Thiết kế</a>
       </li>
     </ul>
 
@@ -60,7 +60,7 @@
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">KING System</span>
+      <span class="brand-text font-weight-light">DELI System</span>
     </a>
 
     <!-- Sidebar -->
@@ -97,7 +97,7 @@
               <li class="nav-item">
                 <a href="{{route('staff.shift.manager.get')}}" class="nav-link">
                   <i class="fa fa-calendar-check-o nav-icon"></i>
-                  <p>Xếp làm việc</p>
+                  <p>Sắp lịch</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -158,7 +158,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-wrench"></i>
               <p>
-                Kỹ thuật
+                Thiết kế
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -172,7 +172,7 @@
               <li class="nav-item">
                 <a href="{{route('staff.ticketlog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký sửa chữa</p>
+                  <p>Nhật ký thiết kế</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -210,7 +210,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
               <p>
-                Lớp học
+                Dự án
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -218,19 +218,19 @@
               <li class="nav-item">
                 <a href="{{route('staff.course.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Danh sách lớp</p>
+                  <p>Danh sách dự án</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('staff.course.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
-                  <p>Thêm lớp mới</p>
+                  <p>Thêm dự án</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('staff.courselog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký lớp</p>
+                  <p>Nhật ký dự án</p>
                 </a>
               </li>
             </ul>
@@ -240,7 +240,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-money"></i>
               <p>
-                Thu - Chi
+                Tài chính
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>

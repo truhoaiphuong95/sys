@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>KING | Thêm link tải về</title>
+<title>DELI | Thêm link tải về</title>
 <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 @stop
   
@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>THÊM LINK TẢI VỀ</h1>
+            <h1>THÊM LINK DOWNLOAD</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Tải về</li>
+              <li class="breadcrumb-item active">download</li>
             </ol>
           </div>
         </div>
@@ -63,8 +63,10 @@
                 <input type="text" class="form-control" name="link" value="{{ old('link') }}" required>
               </div>
               <div class="form-group col-md-12">
-                <label>SHA1</label>
-                <input type="text" class="form-control" name="sha1" value="{{ old('sha1') }}">
+                <!--<label>SHA1</label>
+                <input type="text" class="form-control" name="sha1" value="{{ old('sha1') }}">-->
+                <label for="hinhthe">Chọn hình ảnh</label>
+	              <input type="file" class="form-control" id="hinhthe"  name="sha1" value="{{ old('sha1') }}"/>
               </div>
             </div>
           </div>
