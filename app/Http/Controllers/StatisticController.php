@@ -25,7 +25,12 @@ class StatisticController extends Controller
         }
         $thismonth = $ticket_count[Carbon::now()->month-1];
         $lastmonth = $ticket_count[Carbon::now()->month-2];
-        $data['ticket_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        if($data['ticket_growth'] == 0){
+            $data['ticket_growth'] = 1;
+        }
+        else{
+            $data['ticket_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        }
         $data['ticket_count'] = $ticket_count;
 
         $data['student_sum'] = Course_student::whereYear('created_at', '=', Carbon::now()->year)->get()->count();
