@@ -41,9 +41,11 @@ class TicketService implements TicketServiceContract
         $log['content'] = "Đang chờ xử lý.";
         $log['is_public'] = true;
         $this->relatedService->log->store($log);
-        foreach($req->services as $service_id) {
-            $service = $this->relatedService->service->find($service_id);
-            $ticket->services()->attach($service->id);
+        if(isset($req->services)) {
+            foreach($req->services as $service_id) {
+                $service = $this->relatedService->service->find($service_id);
+                $ticket->services()->attach($service->id);
+            }
         }
         return $ticket;
     }
@@ -68,6 +70,14 @@ class TicketService implements TicketServiceContract
     {
         $data['ticket_status_id'] = $ticketstatus_id;
         if($price != NULL) $data['price'] = $price;
+        
+        $status = $this->relatedService->status->find($ticketstatus_id);
+        $log['content'] = "Đã thay đổi trạng thái thành ".$status->name;
+        $log['ticket_id'] = $id;
+        $log['staff_id'] = UserInfo()->id;
+        $log['is_public'] = 0;
+        $this->relatedService->log->store($log);
+
         return $this->repository->update($id, $data);
     }
 

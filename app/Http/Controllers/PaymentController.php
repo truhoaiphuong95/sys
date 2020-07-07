@@ -30,10 +30,32 @@ class PaymentController extends Controller
         $data['fields'] = field::all();
         return view('payment-add', $data);
     }
+
+    public function getAddmore(ClientServiceContract $client_service) {
+        $data['branches'] = branch::all();
+        $data['staffs'] = staff::all();
+        $data['fields'] = field::all();
+        return view('payment-addmore', $data);
+    }
     
     public function postAdd(Request $req) 
     {
         $payment_id = $this->service->store($req);
+        return redirect()->route('staff.payment.view.get', ['payment_id' => $payment_id]);
+    }
+    
+    public function getEdit($payment_id)
+    {
+        $data['payment'] = $this->service->find($payment_id);
+        $data['branches'] = branch::all();
+        $data['staffs'] = staff::all();
+        $data['fields'] = field::all();
+        return view('payment-edit', $data);
+    }
+
+    public function postEdit($payment_id, Request $req) 
+    {
+        $payment_id = $this->service->update($payment_id, $req);
         return redirect()->route('staff.payment.view.get', ['payment_id' => $payment_id]);
     }
     

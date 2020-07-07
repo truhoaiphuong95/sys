@@ -25,11 +25,7 @@ class StatisticController extends Controller
         }
         $thismonth = $ticket_count[Carbon::now()->month-1];
         $lastmonth = $ticket_count[Carbon::now()->month-2];
-        if($lastmonth==0) {
-            $data['ticket_growth'] = 100;
-        } else {
-            $data['ticket_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
-        }
+        $data['ticket_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
         $data['ticket_count'] = $ticket_count;
 
         $data['student_sum'] = Course_student::whereYear('created_at', '=', Carbon::now()->year)->get()->count();
@@ -41,13 +37,9 @@ class StatisticController extends Controller
         }
         $thismonth = $student_count[Carbon::now()->month-1];
         $lastmonth = $student_count[Carbon::now()->month-2];
-        if($lastmonth==0) {
-            $data['student_growth'] = 100;
-        } else {
-            $data['student_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
-        }
-        
+        $data['student_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
         $data['student_count'] = $student_count;
+
         $fields = field::all();
         foreach($fields as $f => $field) {
             $payment_sum[$f] = Payment::whereYear('created_at', '=', Carbon::now()->year)->where('field_id', $field->id)->get()->sum('amount');

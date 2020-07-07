@@ -41,7 +41,6 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
     Route::group(['prefix' => 'clients'], function() 
     {
         Route::get('/', 'ClientController@getList')->name('staff.client.list.get');
-        Route::get('/noiquy', 'ClientController@getNoiQuy')->name('staff.client.noiquy.get');
         Route::get('/search', 'ClientController@getSearch')->name('staff.client.search.get');
         Route::post('/search', 'ClientController@postSearch')->name('staff.client.search.post');
         Route::get('/{client_id}', 'ClientController@getView')->name('staff.client.view.get');
@@ -60,8 +59,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/{field_id}', 'FinancialController@getField');
     });
 
-    Route::group(['prefix' => 'receipts'], function()
-    //Route::prefix('receipts')->middleware('official')->group(function ()
+    Route::prefix('receipts')->middleware('official')->group(function ()
     {
         Route::get('/', 'ReceiptController@getList')->name('staff.receipt.list.get');
         Route::get('/field/{field_id}', 'ReceiptController@getListbyField')->name('staff.receipt.listbyfield.get');
@@ -74,13 +72,13 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/destroy/{receipt_id}', 'ReceiptController@getDestroy')->name('staff.receipt.destroy.get')->middleware('manager');
     });
 
-    Route::group(['prefix' => 'payments'], function()
-    //Route::prefix('payments')->middleware('official')->group(function ()
+    Route::prefix('payments')->middleware('official')->group(function ()
     {
         Route::get('/', 'PaymentController@getList')->name('staff.payment.list.get');
         Route::get('/{payment_id}', 'PaymentController@getView')->name('staff.payment.view.get');
         Route::get('/print/{payment_id}', 'PaymentController@getPrint')->name('staff.payment.print.get');
         Route::get('/add/{client_id}', 'PaymentController@getAdd')->name('staff.payment.add.get')->middleware('manager');
+        Route::get('/addmore', 'PaymentController@getAddmore')->name('staff.payment.addmore.get')->middleware('manager');
         Route::post('/add', 'PaymentController@postAdd')->name('staff.payment.add.post')->middleware('manager');
         Route::get('/edit/{payment_id}', 'PaymentController@getEdit')->name('staff.payment.edit.get')->middleware('manager');
         Route::post('/edit/{payment_id}', 'PaymentController@postEdit')->name('staff.payment.edit.post')->middleware('manager');
@@ -118,7 +116,7 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
 
     Route::group(['prefix' => 'statistic'], function() 
     {
-        Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get');
+        Route::get('/finance', 'StatisticController@getFinance')->name('staff.statistic.finance.get')->middleware('official');
     });
     Route::group(['prefix' => 'feedbacks'], function() 
     {
@@ -143,6 +141,9 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::get('/edit/{course_id}', 'CourseController@getEdit')->name('staff.course.edit.get')->middleware('leader');
         Route::post('/edit/{course_id}', 'CourseController@postEdit')->name('staff.course.edit.post')->middleware('leader');
         Route::get('/log', 'CourseController@getLogList')->name('staff.courselog.list.get');
+        Route::get('/stat', 'CourseStat@getIndex');
+        Route::get('/delete/{course_id}', 'CourseController@getDelete')->name('staff.course.delete.get');
+        Route::post('/delete/{course_id}', 'CourseController@postDelete')->name('staff.course.delete.post');
     });
 
     Route::group(['prefix' => 'coursestudents'], function ()
@@ -189,15 +190,5 @@ Route::group(['prefix' => '','middleware' => 'staff'], function()
         Route::post('/edit/{shift_id}', 'ShiftController@getEdit')->name('staff.shift.edit.get');
         Route::get('/manager', 'ShiftController@getManager')->name('staff.shift.manager.get')->middleware('manager');
         Route::post('/manager', 'ShiftController@postManager')->name('staff.shift.manager.post')->middleware('manager');
-    });
-
-    // Báo cáo nhân sự
-    Route::group(['prefix' => 'note'], function ()
-    {
-        Route::get('/', 'NoteController@getList');
-        Route::get('/add', 'NoteController@getAdd');
-        Route::post('/add', 'NoteController@postAdd');
-        Route::get('/edit/{note_id}', 'NoteController@getEdit');
-        Route::post('/edit/{note_id}', 'NoteController@postEdit');
     });
 });

@@ -20,10 +20,6 @@ class ClientController extends Controller
         return view('client-list', $data);
     }
     
-    public function getNoiQuy(){
-        return view('client-noiquy');
-    }
-
     public function getView($client_id) {
         $data['client'] = $this->service->getView($client_id);
         return view('client-view', $data);
@@ -49,7 +45,7 @@ class ClientController extends Controller
     public function postEdit($client_id, AddClientRequest $req) 
     {
         $this->service->update($client_id, $req);
-        return redirect()->route('staff.client.view.get', ['client_id'=>$req->id])->with('success', 'Đã cập nhật thành công!');
+        return redirect()->route('staff.client.view.get', ['client_id'=>$client_id])->with('success', 'Đã cập nhật thành công!');
     }
 
     public function getExport()
