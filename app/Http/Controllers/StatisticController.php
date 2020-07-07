@@ -25,10 +25,9 @@ class StatisticController extends Controller
         }
         $thismonth = $ticket_count[Carbon::now()->month-1];
         $lastmonth = $ticket_count[Carbon::now()->month-2];
-        if($data['ticket_growth'] == 0){
-            $data['ticket_growth'] = 1;
-        }
-        else{
+        if($lastmonth==0) {
+            $data['ticket_growth'] = 100;
+        } else {
             $data['ticket_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
         }
         $data['ticket_count'] = $ticket_count;
@@ -42,7 +41,11 @@ class StatisticController extends Controller
         }
         $thismonth = $student_count[Carbon::now()->month-1];
         $lastmonth = $student_count[Carbon::now()->month-2];
-        $data['student_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        if($lastmonth==0) {
+            $data['student_growth'] = 100;
+        } else {
+            $data['student_growth'] = round((($thismonth / $lastmonth) - 1)*100, 2);
+        }
         $data['student_count'] = $student_count;
 
         $fields = field::all();
