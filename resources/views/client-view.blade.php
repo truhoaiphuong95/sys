@@ -86,7 +86,7 @@
               <i class="fa fa-book"></i> Thêm biên nhận (F8)
               </a>
               <a href="{{route('staff.coursestudent.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemvaolop">
-              <i class="fa fa-university"></i> Thêm vào lớp (F9)
+              <i class="fa fa-university"></i> Thêm vào dự án (F9)
               </a>
               <a href="{{route('staff.client.edit.get', ['client_id'=>$client->id])}}" class="btn btn-info btn-block"><b>Sửa thông tin</b></a>
             </div>
@@ -106,7 +106,7 @@
                   <tr>
                     <th>Ngày/Tháng</th>
                     <th>Số phiếu</th>
-                    <th>Dòng Máy</th>
+                    <th>Nội dung</th>
                     <th>Tiến độ</th>
                     <th></th>
                   </tr>
@@ -131,7 +131,7 @@
           <!-- /.card -->
           <div class="card card card-info">
             <div class="card-header">
-              <h3 class="card-title">Danh sách lớp đã tham gia</h3>
+              <h3 class="card-title">Danh sách dự án đã làm</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -140,7 +140,7 @@
                   <tr>
                     <th>Tên lớp</th>
                     <th>Ưu đãi</th>
-                    <th>Học phí</th>
+                    <th>Báo giá</th>
                     <th>Đã thu</th>
                     <th>Còn lại</th>
                     <th></th>
