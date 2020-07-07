@@ -154,7 +154,7 @@
                 <table>
                     <tr class="tabletitle">
                         <td class="item">
-                            <h2>THÔNG TIN THIẾT KẾ</h2>
+                            <h2>THÔNG TIN MÁY</h2>
                         </td>
                     </tr>
 
@@ -165,23 +165,23 @@
                             <td colspan="2"><span style="text-transform: uppercase; font-weight: bold">{{$ticket->model}} </span></td>
                         </tr>
                         <tr>
-                            <td>Màu sắc </td>
+                            <td>CPU </td>
                             <td>{{$ticket->cpu}}  </td>
                         </tr>
                         <tr>
-                            <td>Hình tượng </td>
+                            <td>RAM </td>
                             <td>{{$ticket->ram}}  </td>
                         </tr>
                         <tr>
-                            <td>Phong cách </td>
+                            <td>HDD </td>
                             <td>{{$ticket->storage}}  </td>
                         </tr>
                         <tr>
-                            <td>Kiểu chữ </td>
+                            <td>Phụ kiện </td>
                             <td>{{$ticket->other}}  </td>
                         </tr>
                         <tr>
-                            <td>Ghi chú</td>
+                            <td>Tình trạng</td>
                             <td>{{$ticket->note}}  </td>
                         </tr>
                         </table>
@@ -206,12 +206,12 @@
             </div>
             <!--End Table-->
             <div id="legalcopy">
-                <p class="legal"><strong>Xác nhận Khách hàng</strong> 
+                <p class="legal"><strong>Xác nhận gửi máy</strong> 
                 <p style="height: 99px"></p>
                 </p>
             </div>
             <div id="legalcopy">
-                <p class="legal"><strong>Xác nhận DELI</strong> 
+                <p class="legal"><strong>Xác nhận trả máy</strong> 
                 <p style="height: 99px"></p>
                 </p>
             </div>

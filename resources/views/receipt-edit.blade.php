@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Nhập phiếu thu mới</title>
-<link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
+<title>KING | Chỉnh sửa phiếu thu #{{ $receipt->number }}</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -54,7 +54,8 @@
               <input name="client_id" type="hidden" class="form-control" value="{{ $receipt->client->id }}">
             </div>
             <div class="form-group">
-              <label for="id">Số lai: {{ $receipt->id }}</label>
+              <label for="number">Số lai:</label>
+              <input name="number" type="number" class="form-control" id="number" value="{{ $receipt->number }}" placeholder="Số lai" autofocus required>
             </div>
             <div class="form-group">
               <label for="content">Nội dung thu:</label>
@@ -63,6 +64,10 @@
             <div class="form-group">
               <label for="amount">Số tiền:</label>
               <input name="amount" type="number" class="form-control" id="amount" value="{{ $receipt->amount }}" placeholder="Nhập vào số tiền" required>
+            </div>
+            <div class="form-group">
+              <label>Ngày nhập phiếu</label>
+              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="{{ date('Y-m-d', strtotime($receipt->created_at)) }}" required>
             </div>
             <div class="form-group">
               <label for="staff_id">Người lập phiếu:</label>
@@ -109,7 +114,7 @@
 @stop
 @section('script')
 <!-- Select2 -->
-<script src="{{asset('plugins/select2/select2.full.min.js')}}"></script>
+<script src="{{secure_asset('plugins/select2/select2.full.min.js')}}"></script>
 <script>
   $(function () {
     //Initialize Select2 Elements

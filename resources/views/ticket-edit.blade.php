@@ -1,6 +1,6 @@
 @extends('master')
 @section('title')
-  <title>DELI | Sửa biên nhận</title>
+  <title>KING | Sửa biên nhận</title>
 @endsection
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -52,27 +52,27 @@
                     <input name="requestment" type="text" class="form-control" id="requestment" value="{{$ticket -> requestment}}" autofocus required>
                   </div>
                   <div class="form-group">
-                    <label for="model">Nội dung:</label>
+                    <label for="model">Dòng máy:</label>
                     <input name="model"type="text" class="form-control" id="model" value="{{$ticket -> model}}" required>
                   </div>
                   <div class="form-group">
-                    <label for="cpu">Màu sắc:</label>
+                    <label for="cpu">CPU:</label>
                     <input name="cpu" type="text" class="form-control" id="cpu" value="{{$ticket -> cpu}}">
                   </div>
                   <div class="form-group">
-                    <label for="ram">Hình tượng:</label>
+                    <label for="ram">Dung lượng RAM:</label>
                     <input name="ram" type="text" class="form-control" id="ram" value="{{$ticket -> ram}}">
                   </div>
                   <div class="form-group">
-                    <label for="storage">Phong cách:</label>
+                    <label for="storage">Dung lượng ổ cứng:</label>
                     <input name="storage" type="text" class="form-control" id="storage" value="{{$ticket -> storage}}">
                   </div>
                   <div class="form-group">
-                    <label for="note">Kiểu chữ:</label>
+                    <label for="note">Tình trạng máy:</label>
                     <input name="note" type="text" class="form-control" id="note" value="{{$ticket -> note}}">
                   </div>
                   <div class="form-group">
-                    <label for="other">Yêu cầu khác:</label>
+                    <label for="other">Phụ kiện kèm theo:</label>
                     <input name="other" type="text" class="form-control" id="other" value="{{$ticket -> other}}">
                   </div>
                 </div>

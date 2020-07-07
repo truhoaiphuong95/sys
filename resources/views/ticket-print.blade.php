@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DELI | In biên nhận</title>
+    <title>KING | In biên nhận</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 4 -->
@@ -12,7 +12,7 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('dist/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   </head>
@@ -25,7 +25,7 @@
         <div class="row">
           <div class="col-8 offset-md-4">
             <h2 class="page-header">
-              <i class="fa fa-wrench"></i>  <b>YÊU CẦU THIẾT KẾ</b>
+              <i class="fa fa-wrench"></i>  <b>BIÊN NHẬN SỬA CHỮA MÁY</b>
               <small class="float-right"><b>SỐ PHIẾU #{{ $ticket -> id }}</b></small>
             </h2>
           </div>
@@ -36,12 +36,12 @@
           <div class="col-sm-5 invoice-col">
             {{$solien}}
             <address>
-              <strong>DỊCH VỤ THIẾT KẾ DELI</strong><br>
-              67F7, Tổ 10, KV2<br>
-              P. An Khánh, Q. Ninh Kiều, TP. Cần Thơ<br>
-              <b>Số điện thoại:</b> 094.294.7074 hoặc 097.151.7074<br>
-              <b>Email:</b> hotro@deli4ne1.com<br>
-              <b>Website:</b> deli4ne1.com
+              <strong>Trung tâm Đôrêmon Cần Thơ</strong><br>
+              C132/10A hẻm 132, đường 3 Tháng 2<br>
+              P. Hưng Lợi, Q. Ninh Kiều, TP. Cần Thơ<br>
+              <b>Số điện thoại:</b> 0888-141811 hoặc 096-1020-096<br>
+              <b>Email:</b> hotro@trungtamdoremon.com<br>
+              <b>Website:</b> eduking.edu.vn / cuahangdoremon.com
             </address>
           </div>
           <!-- /.col -->
@@ -52,14 +52,14 @@
               <b>Số điện thoại:</b> {{ PhoneFormat($ticket->client->phone) }}<br>
               <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($ticket->client->birthday)) }}<br>
               <b>Mã khách hàng:</b> KH{{ $ticket->client->id }}<br>
-              <b>Ngày nhận yêu cầu:</b> {{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+              <b>Ngày nhận máy:</b> {{ $ticket->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
               <b>Nhân viên nhận:</b> {{ $ticket->staff->name }}
             </address>
           </div>
           <!-- /.col -->
           <div class="col-sm-2 invoice-col">
             <div class="float-right"><img src="/images/QUET.png" /></div>
-            <div class="float-right">{!! QrCode::size(170)->margin(0)->generate('http://sys.deli4ne1.com/tracking/'.$ticket->id) !!}</div>
+            <div class="float-right">{!! QrCode::size(170)->margin(0)->generate('http://sys.eduking.edu.vn/tracking/'.$ticket->id) !!}</div>
           </div>
           <!-- /.col -->
         </div>
@@ -84,11 +84,11 @@
             <table class="table table-striped table table-bordered">
               <tbody>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Nội dung:</b></h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Dòng máy</b></h5></td>
                   <td class="text-uppercase">{{ $ticket -> model }}</h5></td>
                 </tr>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Màu sắc:</b></h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>CPU</b></h5></td>
                   <td class="text-uppercase">{{ $ticket -> cpu }}</h5></td>
                 </tr>
               </tbody>
@@ -98,11 +98,11 @@
             <table class="table table-striped table table-bordered">
               <tbody>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Hình tượng:</b></h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Dung lượng RAM</b></h5></td>
                   <td class="text-uppercase">{{ $ticket -> ram }}</h5></td>
                 </tr>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Phong cách:</b></h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Dung lượng ổ cứng</b></h5></td>
                   <td class="text-uppercase">{{ $ticket -> storage }}</h5></td>
                 </tr>
               </tbody>
@@ -112,11 +112,11 @@
             <table class="table table-striped table table-bordered">
               <tbody>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Kiểu chữ:</b></h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Phụ kiện kèm theo</b></h5></td>
                   <td class="text-uppercase">{{ $ticket -> other }}</h5></td>
                 </tr>
                 <tr>
-                  <td class="text-uppercase" style="width: 200px"><b>Yêu cầu khác:</b></h5></td>
+                  <td class="text-uppercase" style="width: 200px"><b>Tình trạng máy</b></h5></td>
                   <td class="text-uppercase">{{ $ticket -> note }}</h5></td>
                 </tr>
               </tbody>
@@ -127,8 +127,8 @@
         <!-- /.row -->
         
         <div class="row">
-          <div class="col-md-12"><h5><b>* Xin quý khách vui lòng kiểm tra thông tin trước khi chuyển cọc.
-          <br/>** Quý khách hàng có thể kiểm tra tình trạng thiết kế tại http://sys.deli4ne1.com/tracking/{{$ticket->id}}.
+          <div class="col-md-12"><h5><b>* Xin quý khách mang theo phiếu này khi đến nhận máy.
+          <br/>** Quý khách hàng có thể kiểm tra tình trạng sửa chữa máy của mình tại http://sys.eduking.edu.vn/tracking/{{$ticket->id}}.
           </b></h5></div>
         </div>
         <div class="row">

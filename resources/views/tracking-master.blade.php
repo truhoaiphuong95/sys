@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>THIẾT KẾ DELI | Theo dõi tiến độ thiết kế</title>
+    <title>techKING Center | Theo dõi trình trạng máy</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -11,9 +11,9 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('dist/css/adminlte.min.css')}}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{asset('plugins/iCheck/square/blue.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -29,15 +29,13 @@
   <body class="hold-transition login-page">
     <div class="col-md-6 mx-auto my-5">
       <div class="login-logo">
-        <a href="/tracking"><b>DELI</b>4ne1</a>
-        <h5 style="font-style: italic;">Cảm ơn Quý Khách hàng đã tin tưởng và sử dụng dịch vụ Thiết kế của <b>DELI</b>4ne1!</h5>
+        <a href="/tracking"><b>techKING</b></a>
+        <h5>Cảm ơn quý khách đã tin tưởng và sử dụng dịch vụ của techKING!</h5>
       </div>
       <!-- /.login-logo -->
     </div>
     <div class="row">
-        <div class="col-lg-3 col-md-0">
- 
-        </div>
+      <div class="col-lg-3 col-md-0"></div>
       <div class="col-lg-6">
       @if (count($errors) > 0) 
       @foreach ($errors->all() as $error) 
@@ -51,11 +49,11 @@
       </div>
     </div>
     <!-- jQuery -->
-    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{secure_asset('plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{secure_asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- iCheck -->
-    <script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
+    <script src="{{secure_asset('plugins/iCheck/icheck.min.js')}}"></script>
     <script>
       $(function () {
         $('input').iCheck({

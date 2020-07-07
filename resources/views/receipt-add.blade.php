@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Nhập phiếu thu mới</title>
-<link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
+<title>KING | Nhập phiếu thu mới</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -54,12 +54,20 @@
               <input name="client_id" type="hidden" class="form-control" value="{{ $client->id }}">
             </div>
             <div class="form-group">
+              <label for="number">Số lai:</label>
+              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
+            </div>
+            <div class="form-group">
               <label for="content">Nội dung thu:</label>
-              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: thiết kế logo,..." autofocus required>
+              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Thu học phí THCB-K10" autofocus required>
             </div>
             <div class="form-group">
               <label for="amount">Số tiền:</label>
               <input name="amount" type="number" class="form-control" id="amount" placeholder="Nhập vào số tiền" required>
+            </div>
+            <div class="form-group">
+              <label>Ngày nhập phiếu</label>
+              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="" required>
             </div>
             <div class="form-group">
               <label for="branch_id">Chi nhánh:</label>
@@ -73,7 +81,7 @@
               <label for="staff_id">Người lập phiếu:</label>
               <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
                 @foreach ($staffs as $data)
-                <option value="{{$data->id}}">{{$data->name}}</option>
+                <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
                 @endforeach
               </select>
             </div>
@@ -106,7 +114,7 @@
 @stop
 @section('script')
 <!-- Select2 -->
-<script src="{{asset('plugins/select2/select2.full.min.js')}}"></script>
+<script src="{{secure_asset('plugins/select2/select2.full.min.js')}}"></script>
 <script>
   $(function () {
     //Initialize Select2 Elements

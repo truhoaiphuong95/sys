@@ -1,8 +1,8 @@
 @extends('master')
 @section('head')
-<title>DELI | Xem phiếu chi #{{$payment->id}}</title>
-<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
-<link rel="stylesheet" href="{{asset('plugins/iCheck/square/blue.css')}}">
+<title>KING | Xem phiếu chi #{{$payment->number}}</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -49,7 +49,7 @@
                   <b>Số điện thoại: </b><a href="tel:{{$payment->client->sdt}}">{{PhoneFormat($payment->client->phone)}}</a><br>
                   <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($payment->client -> birthday)) }}<br>
                   <b>Mã khách hàng:</b> {{ $payment->client -> id }}<br>
-                  <b>Ngày lập phiếu:</b> {{ $payment->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+                  <b>Ngày lập phiếu:</b> {{ $payment->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }}<br>
                   <b>Nhân viên lập:</b> {{ $payment->staff->name }}
                 </address>
               </div>
@@ -102,10 +102,10 @@
 <!-- /.content-wrapper -->
 @stop
 @section('script')
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <!-- iCheck -->
-<script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
+<script src="{{secure_asset('plugins/iCheck/icheck.min.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

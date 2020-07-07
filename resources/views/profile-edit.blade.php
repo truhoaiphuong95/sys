@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DELI | Thông tin cá nhân</title>
+<title>KING | Thông tin cá nhân</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->

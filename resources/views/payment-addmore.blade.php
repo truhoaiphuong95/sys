@@ -48,12 +48,6 @@
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
-              <label for="inputSostt">Tên người nhận:</label> {{$client -> name}}   |   
-              <label for="inputSostt">Số Điện Thoại:</label> {{$client -> phone}}    |    
-              <label for="inputSostt">Ngày Sinh:</label> {{$client -> birthday}}
-              <input name="client_id" type="hidden" class="form-control" value="{{$client->id}}">
-            </div>
-            <div class="form-group">
               <label for="number">Số lai:</label>
               <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
             </div>
@@ -86,11 +80,17 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="field_id">Danh muc thu:</label>
-              <select name="field_id" id="inputPhieuthuDanhmuc" class="form-control select2" style="width: 100%;">
+              <label for="field_id">Danh muc chi:</label>
+              <select name="field_id" id="field_id" class="form-control select2" style="width: 100%;">
                 @foreach ($fields as $data)
                 <option value="{{$data->id}}">{{$data->name}}</option>
                 @endforeach
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subfield_id">Danh muc con:</label>
+              <select name="subfield_id" id="subfield_id" class="form-control select2" style="width: 100%;">
+                <option value="subfieldkey">subfieldname</option>
               </select>
             </div>
             <div class="form-group">

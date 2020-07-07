@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Khách hàng: {{$client->name}}</title>
-<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<title>KING | Khách hàng: {{$client->name}}</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -10,7 +10,7 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <!--<div class="col-sm">
+        <div class="col-sm-6">
           <h1 class="text-uppercase">KHÁCH HÀNG: {{$client->name}}</h1>
         </div>
         <div class="col-sm-6">
@@ -18,7 +18,7 @@
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
             <li class="breadcrumb-item active">Thông tin khách hàng</li>
           </ol>
-        </div>-->
+        </div>
       </div>
     </div>
     <!-- /.container-fluid -->
@@ -50,44 +50,43 @@
         <!-- /.col -->
         <div class="col-md-3">
           <!-- Profile Image -->
-          <div class="card card-info card-outline">
+          <div class="card card-primary card-outline">
             <div class="card-body box-profile">
               <div class="text-center">
-                <img class="profile-user-img img-fluid img-circle" src="{{asset('dist/img/user4-128x128.jpg')}}" alt="User profile picture">
+                <img class="profile-user-img img-fluid img-circle" src="{{secure_asset('dist/img/user4-128x128.jpg')}}" alt="User profile picture">
               </div>
-              <hr class="text-center">
-              <h3 class="profile-username text-center text-uppercase text-info"><b>{{$client->name}}</b></h3>
+              <h3 class="profile-username text-center"> {{$client->name}}</h3>
               <!--<p class="text-muted text-center">Software Engineer</p>-->
               <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
-                  <b>Phone:</b> <a class="float-right" href="tel:{{$client->sdt}}"> {{$client->phone}}</a>
+                  <b>Số điện thoại</b> <a class="float-right" href="tel:{{$client->sdt}}"> {{$client->phone}}</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Date:</b> <a class="float-right">@if (isset($client->birthday)) {{date("d/m/Y", strtotime($client->birthday))}} @else NO @endif</a>
+                  <b>Ngày sinh</b> <a class="float-right">@if (isset($client->birthday)) {{date("d/m/Y", strtotime($client->birthday))}} @else Không có @endif</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Zalo</b> @if ($client->zalo!="") <a class="float-right" href="https://zalo.me/{{$client->zalo}}">{{$client->zalo}}</a>  @else <a class="float-right">NO</a> @endif
+                  <b>Zalo</b> @if ($client->zalo!="") <a class="float-right" href="https://zalo.me/{{$client->zalo}}">{{$client->zalo}}</a>  @else <a class="float-right">Không có</a> @endif
                 </li>
                 <li class="list-group-item">
-                  <b>Mail:</b> @if ($client->email!="") <a class="float-right">{{$client->email}}</a> @else <a class="float-right">NO</a> @endif
+                  <b>Email</b> @if ($client->email!="") <a class="float-right">{{$client->email}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
                 <li class="list-group-item">
-                  <b>Job:</b> @if ($client->major!="") <a class="float-right"><b>{{$client->major}}</b></a> @else <a class="float-right">NO</a> @endif
+                  <b>Ngành học</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
               </ul>
               @if(UserInfo()->level >= 3)
               <a href="{{route('staff.payment.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuchi">
-              <i class="fa fa-arrow-right"></i> PAYMENT (F6)
+              <i class="fa fa-arrow-right"></i> Thêm phiếu chi (F6)
               </a>
               <a href="{{route('staff.receipt.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemphieuthu">
-              <i class="fa fa-arrow-left"></i> RECEIPTS (F7)
+              <i class="fa fa-arrow-left"></i> Thêm phiếu thu (F7)
               </a>
               @endif
               <a href="{{route('staff.ticket.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThembiennhan">
-                <i class="fa fa-book"></i> DESIGN (F8)
+              <i class="fa fa-book"></i> Thêm biên nhận (F8)
               </a>
               <a href="{{route('staff.coursestudent.add.get', ['client_id'=>$client->id])}}" class="btn btn-block btn-default" id="btnThemvaolop">
-              <i class="fa fa-university"></i> PROJECT (F9)
+              <i class="fa fa-university"></i> Thêm vào lớp (F9)
               </a>
               <a href="{{route('staff.client.edit.get', ['client_id'=>$client->id])}}" class="btn btn-info btn-block"><b>Sửa thông tin</b></a>
             </div>
@@ -95,72 +94,67 @@
           </div>
           <!-- /.card -->
         </div>
-        <div class="col-sm">
+        <div class="col-md-9">
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title text-center">
-                RETAIL CUSTOMERS
-              </h3>
+              <h3 class="card-title">Danh sách biên nhận</h3>
             </div>
+            <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                  <tr class="text-center">
-                    <th>DATE</th>
-                    <th>CONTENT</th>
+                  <tr>
+                    <th>Ngày/Tháng</th>
+                    <th>Số phiếu</th>
+                    <th>Dòng Máy</th>
+                    <th>Tiến độ</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($client->tickets as $data)
                   <tr>
-                    <td class="text-center">
-                        {{date("d/m/Y", strtotime($data->created_at))}}
-                        <hr>
-                        <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
-                        <hr>
-                        <a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a>
-                    </td>
+                    <td>{{date("d/m/Y", strtotime($data->created_at))}}</td>
+                    <td>{{$data->id}}</td>
                     <td>{{$data->model}}</td>
+                    <td>
+                      <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
+                    </td>
+                    <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                   </tr>
                   @endforeach
                   </tfoot>
               </table>
             </div>
+            <!-- /.card-body -->
           </div>
           <!-- /.card -->
           <div class="card card card-info">
             <div class="card-header">
-                <h3 class="card-title text-center">
-                    PROJECT CUSTOMERS
-                </h3>
+              <h3 class="card-title">Danh sách lớp đã tham gia</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example2" class="table table-bordered table-striped">
                 <thead>
-                  <tr class="text-center">
-                    <th>Project Name</th>
-                    <th>PAY</th>
+                  <tr>
+                    <th>Tên lớp</th>
+                    <th>Ưu đãi</th>
+                    <th>Học phí</th>
+                    <th>Đã thu</th>
+                    <th>Còn lại</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($client->courseStudents as $data)
                   <tr>
-                    <td>
-                        {!!$data->course->linkName()!!}
-                        <hr>
-                        <a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-info">Sửa thông tin</a>
-                    </td>
-                    <td>
-                        <b>Cọc:</b> 
-                        @if ($data->deal_rate!=""){{$data->deal_rate}} % @else 0 @endif
-                        <hr>
-                        <b>Phí:</b>  {{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}
-                        <hr>
-                        <b>Pay:</b>  {{MoneyFormat($data->tuition_done)}}
-                        <hr>
-                        <b>Còn:</b>  {{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}
-                    </td>
+                    <td>{!!$data->course->linkName()!!}</td>
+                    <td>{{$data->deal_rate}}%</td>
+                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>
+                    <td>{{MoneyFormat($data->tuition_done)}}</td>
+                    <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
+                    <td><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
                   </tr>
                   @endforeach
                   </tfoot>
@@ -178,8 +172,8 @@
 <!-- /.content-wrapper -->
 @stop
 @section('script')
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

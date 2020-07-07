@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   @yield('head')
-  <title>DELI | Blank Page</title>
+  <title>KING | Blank Page</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -12,8 +12,8 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{asset('dist/css/custom.css')}}">
+  <link rel="stylesheet" href="{{secure_asset('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{secure_asset('dist/css/custom.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -28,10 +28,13 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="https://deli4ne1.com/" class="nav-link">HOME DELI</a>
+        <a href="{{route('staff.dashboard.view.get')}}" class="nav-link">Trang chủ</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('staff.course.list.get')}}" class="nav-link">DỰ ÁN</a>
+        <a href="{{route('staff.course.list.get')}}" class="nav-link">Khoá học</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{route('staff.ticket.list.get')}}" class="nav-link">Kỹ thuật</a>
       </li>
     </ul>
 
@@ -53,11 +56,11 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="{{asset('dist/img/AdminLTELogo.png')}}"
+      <img src="{{secure_asset('dist/img/AdminLTELogo.png')}}"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">DELI DESIGN</span>
+      <span class="brand-text font-weight-light">KING System</span>
     </a>
 
     <!-- Sidebar -->
@@ -65,7 +68,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{secure_asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="{{route('staff.profile.edit.get')}}" class="d-block">{{ UserInfo()->name }}</a>
@@ -81,7 +84,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           </li>
-          @if(UserInfo()->level>=2)
+          @if(UserInfo()->isManager())
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-briefcase"></i>
@@ -92,19 +95,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('staff.client.list.get')}}" class="nav-link">
-                  <i class="fa nav-icon fa fa-users nav-icon"></i>
-                  <p>Danh bạ khách</p>
-                </a>
-              </li>
-              @if(UserInfo()->level>=3)
-              <li class="nav-item">
                 <a href="{{route('staff.shift.manager.get')}}" class="nav-link">
                   <i class="fa fa-calendar-check-o nav-icon"></i>
                   <p>Xếp làm việc</p>
                 </a>
               </li>
-              @endif
+              <li class="nav-item">
+                <a href="{{route('staff.worklog.list.get')}}" class="nav-link">
+                  <i class="fa fa-history nav-icon"></i>
+                  <p>Xem báo cáo</p>
+                </a>
+              </li>
             </ul>
           </li>
           @endif
@@ -118,27 +119,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('staff.client.noiquy.get')}}" class="nav-link">
-                  <i class="fa nav-icon fa fa-users nav-icon"></i>
-                  <p>Nội Quy</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{route('staff.worklog.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
-                  <p>Note Bình - Phương</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="note/add" class="nav-link">
-                  <i class="fa fa-plus nav-icon"></i>
                   <p>Nộp báo cáo</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('staff.worklog.list.get')}}" class="nav-link">
-                  <i class="fa fa-history nav-icon"></i>
-                  <p>Xem báo cáo</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -153,19 +136,29 @@
                   <p>Đăng ký lịch làm</p>
                 </a>
               </li>
+              @if(UserInfo()->isOfficial())
               <li class="nav-item">
                 <a href="{{route('staff.statistic.finance.get')}}" class="nav-link">
                   <i class="fa fa-bar-chart nav-icon"></i>
                   <p>Xem thống kê</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
+          @if(UserInfo()->isOfficial())
+          <li class="nav-item">
+            <a href="{{route('staff.client.list.get')}}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>Danh bạ khách</p>
+            </a>
+          </li>
+          @endif
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-wrench"></i>
               <p>
-                Thiết kế
+                Kỹ thuật
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -179,7 +172,7 @@
               <li class="nav-item">
                 <a href="{{route('staff.ticketlog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký</p>
+                  <p>Nhật ký sửa chữa</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -217,7 +210,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-university"></i>
               <p>
-                Dự án
+                Lớp học
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -225,24 +218,24 @@
               <li class="nav-item">
                 <a href="{{route('staff.course.list.get')}}" class="nav-link">
                   <i class="fa fa-list nav-icon"></i>
-                  <p>Danh sách dự án</p>
+                  <p>Danh sách lớp</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('staff.course.add.get')}}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
-                  <p>Thêm dự án mới</p>
+                  <p>Thêm lớp mới</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('staff.courselog.list.get')}}" class="nav-link">
                   <i class="fa fa-history nav-icon"></i>
-                  <p>Nhật ký dự án</p>
+                  <p>Nhật ký lớp</p>
                 </a>
               </li>
             </ul>
           </li>
-          @if(UserInfo()->level>=3)
+          @if(UserInfo()->isOfficial())
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-money"></i>
@@ -314,24 +307,24 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.0.0-alpha
     </div>
-    <strong>Copyright &copy; 2020 <a href="http://deli4ne1.com">DELI</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
     reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{secure_asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{secure_asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- SlimScroll -->
-<script src="{{asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{secure_asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
-<script src="{{asset('plugins/fastclick/fastclick.js')}}"></script>
+<script src="{{secure_asset('plugins/fastclick/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('dist/js/adminlte.min.js')}}"></script>
+<script src="{{secure_asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('dist/js/demo.js')}}"></script>
+<script src="{{secure_asset('dist/js/demo.js')}}"></script>
 @yield('script')
 </body>
 </html>

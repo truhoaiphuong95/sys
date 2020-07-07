@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Sổ phiếu thu @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</title>
-<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<title>KING | Sổ phiếu thu @if(isset($danhmuc)): {{$danhmuc->ten}} @endif</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -35,10 +35,11 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr class="text-center">
+                <tr>
                   <th>Thời gian</th>
-                <th>Người nộp</th>
-                  <th>Chi nhánh | Danh mục</th>
+                  <th>Phân loại</th>
+                  <th>Số lai</th>
+                  <th>Người nộp</th>
                   <th>Nội dung</th>
                   <th>Số tiền</th>
                   <th></th>
@@ -47,12 +48,13 @@
                 <tbody>
                 @foreach($receipts->reverse() as $data)
                 <tr>
-                  <td class="text-center">{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>
+                  <td>{{date("Y/m/d h:m:i", strtotime($data->created_at))}}</td>
+                  <td><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
+                  <td>{{$data->number}}</td>
                   <td>{{$data->client->name}}</td>
-                  <td class="text-center"><span class="badge bg-info">{{$data->branch->name}}</span> <span class="badge bg-danger">{{$data->field->name}}</span></td>
                   <td>{{$data->content}}</td>
-                  <td class="text-center">{{number_format($data->amount,0,",",".")}} ₫</td>
-                  <td class="text-center"><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                  <td>{{number_format($data->amount,0,",",".")}} ₫</td>
+                  <td><a href="{{route('staff.receipt.view.get', ['receipt_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach
                 </tfoot>
@@ -72,8 +74,8 @@
 @stop
 
 @section('script')
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

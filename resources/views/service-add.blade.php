@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Thêm dịch vụ</title>
-<link rel="stylesheet" href="{{asset('plugins/select2/select2.min.css')}}">
+<title>KING | Thêm dịch vụ</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -76,7 +76,7 @@
 @stop
 @section('script')
 <!-- Select2 -->
-<script src="{{asset('plugins/select2/select2.full.min.js')}}"></script>
+<script src="{{secure_asset('plugins/select2/select2.full.min.js')}}"></script>
 <script>
   $(function () {
     //Initialize Select2 Elements

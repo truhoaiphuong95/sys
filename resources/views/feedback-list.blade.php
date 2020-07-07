@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Yêu cầu thiết kế</title>
-<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<title>KING | Sổ biên nhận</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 <style>
   .pagination li {
     padding: 10px; 
@@ -19,12 +19,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>THIẾT KẾ</h1>
+            <h1>SỔ BIÊN NHẬN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Thiết kế</li>
+              <li class="breadcrumb-item active">Sổ biên nhận</li>
             </ol>
           </div>
         </div>
@@ -37,7 +37,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách thiết kế</h3>
+              <h3 class="card-title">Danh sách biên nhận</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -57,7 +57,14 @@
                   <td>{{$ticket->id}}</td>
                   <td>{{$ticket->client->name}}</td>
                   <td>{{$ticket->requestment}}</td>
-                  <td><a href="{{route('staff.ticket.view.get', ['case_id' => $ticket->id])}}" class="btn btn-primary">Xem</a></td>
+                  <td>
+                  @if($ticket->feedback==NULL)
+                  <span style="color:red; font-weight: bold;">Chưa có</span>
+                  @else
+                  {{$ticket->feedback->content}}
+                  @endif
+                  </td>
+                  <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $ticket->id])}}" class="btn btn-primary">Xem</a></td>
                 </tr>
                 @endforeach
                 </tbody>
@@ -78,8 +85,8 @@
 @stop
 
 @section('script')
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

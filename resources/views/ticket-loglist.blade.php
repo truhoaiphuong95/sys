@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Yêu cầu thiết kế</title>
-<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<title>KING | Nhật ký sửa chữa</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -11,12 +11,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>YÊU CẦU THIẾT KẾ</h1>
+            <h1>NHẬT KÝ SỬA CHỮA</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Yêu cầu thiết kế</li>
+              <li class="breadcrumb-item active">Nhật ký sửa chữa</li>
             </ol>
           </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Yêu cầu thiết kế</h3>
+              <h3 class="card-title">Nhật ký sửa chữa</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -37,7 +37,7 @@
                 <thead>
                 <tr>
                   <th>Ngày/Tháng</th>
-                  <th>Yêu cầu</th>
+                  <th>Dòng Máy</th>
                   <th>Nội dung</th>
                 </tr>
                 </thead>
@@ -66,8 +66,8 @@
 @stop
 
 @section('script')
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

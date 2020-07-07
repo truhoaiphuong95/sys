@@ -1,8 +1,8 @@
 @extends('master')
 @section('head')
-<title>DELI | Xem phiếu thu #{{$receipt->id}}</title>
-<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
-<link rel="stylesheet" href="{{asset('plugins/iCheck/square/blue.css')}}">
+<title>KING | Xem phiếu thu #{{$receipt->number}}</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<link rel="stylesheet" href="{{secure_asset('plugins/iCheck/square/blue.css')}}">
 @stop
 @section('main')
 <!-- Content Wrapper. Contains page content -->
@@ -35,7 +35,7 @@
               <div class="col-12">
                 <h4>
                   <i class="fa fa-globe"></i>  <b>PHIẾU THU</b>
-                  <small class="float-right"><b>SỐ PHIẾU #{{ $receipt -> id }}</b></small>
+                  <small class="float-right"><b>SỐ PHIẾU #{{ $receipt -> number }}</b></small>
                 </h4>
               </div>
               <!-- /.col -->
@@ -47,8 +47,9 @@
                 <address>
                   <strong class="text-uppercase"><a href="{{route('staff.client.view.get', ['client_id'=>$receipt->client->id])}}">{{$receipt->client->name}}</a></strong><br>
                   <b>Số điện thoại: </b><a href="tel:{{$receipt->client->sdt}}">{{PhoneFormat($receipt->client->phone)}}</a><br>
+                  <b>Ngày sinh:</b> {{ date("d/m/Y", strtotime($receipt->client->birthday)) }}<br>
                   <b>Mã khách hàng:</b> {{ $receipt->client->id }}<br>
-                  <b>Ngày lập phiếu:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y - H:i") }}<br>
+                  <b>Ngày lập phiếu:</b> {{ $receipt->created_at->timezone('Asia/Ho_Chi_Minh')->format("d/m/Y") }}<br>
                   <b>Nhân viên lập:</b> {{ $receipt->staff->name }}
                 </address>
               </div>
@@ -107,10 +108,10 @@
 <!-- /.content-wrapper -->
 @stop
 @section('script')
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <!-- iCheck -->
-<script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
+<script src="{{secure_asset('plugins/iCheck/icheck.min.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

@@ -1,7 +1,7 @@
 @extends('master')
 @section('head')
-<title>DELI | Danh sách File</title>
-<link rel="stylesheet" href="{{asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+<title>KING | Danh sách phần mềm</title>
+<link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DATA KHÁCH HÀNG</h1>
+            <h1>THƯ VIỆN TÀI NGUYÊN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -37,14 +37,14 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DATA File Khách hàng</h3>
+              <h3 class="card-title">Tài nguyên có thể tải</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Tên File Khách hàng</th>
+                        <th>Tên</th>
                         <th>Mô tả</th>
                         <th>SHA1</th>
                         <th style="width: 10%"></th>
@@ -84,8 +84,8 @@
 @stop
 
 @section('script')
-<script src="{{asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{secure_asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

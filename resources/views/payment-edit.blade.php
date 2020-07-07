@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhập phiếu chi mới</title>
+<title>KING | Sửa phiếu chi #{{$payment->number}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/select2/select2.min.css')}}">
 @stop
 @section('main')
@@ -16,7 +16,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Nhập phiếu chi</li>
+            <li class="breadcrumb-item active">Sửa phiếu chi</li>
           </ol>
         </div>
       </div>
@@ -44,36 +44,37 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="{{route('staff.payment.add.post')}}" method="post">
+        <form role="form" action="{{route('staff.payment.edit.post', ['payment_id' => $payment->id])}}" method="post">
           {{csrf_field()}}
           <div class="card-body">
             <div class="form-group">
-              <label for="inputSostt">Tên người nhận:</label> {{$client -> name}}   |   
-              <label for="inputSostt">Số Điện Thoại:</label> {{$client -> phone}}    |    
-              <label for="inputSostt">Ngày Sinh:</label> {{$client -> birthday}}
-              <input name="client_id" type="hidden" class="form-control" value="{{$client->id}}">
+              <label for="inputSostt">Tên người nhận:</label> {{$payment->client -> name}}   |   
+              <label for="inputSostt">Số Điện Thoại:</label> {{$payment->client -> phone}}    |    
+              <label for="inputSostt">Ngày Sinh:</label> {{$payment->client -> birthday}}
+              <input name="payment_id" type="hidden" class="form-control" value="{{$payment->id}}">
+              <input name="client_id" type="hidden" class="form-control" value="{{$payment->client->id}}">
             </div>
             <div class="form-group">
               <label for="number">Số lai:</label>
-              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" autofocus required>
+              <input name="number" type="number" class="form-control" id="number" placeholder="Số lai" value="{{$payment->number}}" autofocus required>
             </div>
             <div class="form-group">
               <label for="content">Nội dung chi:</label>
-              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Chi mua trà sữa" autofocus required>
+              <input name="content" type="text" class="form-control" id="content" placeholder="Ví dụ: Chi mua trà sữa" value="{{$payment->content}}" autofocus required>
             </div>
             <div class="form-group">
               <label for="amount">Số tiền:</label>
-              <input name="amount" type="number" class="form-control" id="amount" placeholder="Nhập vào số tiền" required>
+              <input name="amount" type="number" class="form-control" id="amount" placeholder="Nhập vào số tiền" value="{{$payment->amount}}" required>
             </div>
             <div class="form-group">
               <label>Ngày nhập phiếu</label>
-              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="" required>
+              <input type="date" min="2018-01-01" class="form-control" name="created_at" value="{{ date('Y-m-d', strtotime($payment->created_at)) }}" required>
             </div>
             <div class="form-group">
               <label for="staff_id">Người lập phiếu:</label>
               <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
                 @foreach ($staffs as $data)
-                <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
+                <option value="{{$data->id}}" @if($payment->staff_id == $data->id) selected="selected" @endif >{{$data->name}}</option>
                 @endforeach
               </select>
             </div>
@@ -81,7 +82,7 @@
               <label for="branch_id">Chi nhánh:</label>
               <select name="branch_id" id="branch_id" class="form-control select2" style="width: 100%;">
                 @foreach ($branches as $data)
-                <option value="{{$data->id}}">{{$data->name}}</option>
+                <option value="{{$data->id}}" @if($payment->branch_id == $data->id) selected="selected" @endif >{{$data->name}}</option>
                 @endforeach
               </select>
             </div>
@@ -89,18 +90,18 @@
               <label for="field_id">Danh muc thu:</label>
               <select name="field_id" id="inputPhieuthuDanhmuc" class="form-control select2" style="width: 100%;">
                 @foreach ($fields as $data)
-                <option value="{{$data->id}}">{{$data->name}}</option>
+                <option value="{{$data->id}}" @if($payment->field_id == $data->id) selected="selected" @endif >{{$data->name}}</option>
                 @endforeach
               </select>
             </div>
             <div class="form-group">
               <label for="note">Ghi chú:</label>
-              <input name="note" type="text" class="form-control" id="note" placeholder="Nội dung ghi chú">
+              <input name="note" type="text" class="form-control" id="note" placeholder="Nội dung ghi chú" value="{{$payment->amount}}">
             </div>
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Thêm vào</button>
+            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
             <a onclick="history.go(-1);" class="btn">Quay lại</a>
           </div>
         </form>

@@ -1,8 +1,8 @@
 @extends('master')
 
 @section('head')
-<title>DELI | Báo cáo công việc</title>
-<link rel="stylesheet" href="{{ asset('plugins/select2/select2.min.css') }}">
+<title>KING | Báo cáo công việc</title>
+<link rel="stylesheet" href="{{ secure_asset('plugins/select2/select2.min.css') }}">
 @stop
 
 @section('main')
@@ -12,39 +12,17 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm">
+        <div class="col-sm-6">
           <h1>BÁO CÁO CÔNG VIỆC</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item active">Báo cáo công việc</li>
+          </ol>
         </div>
       </div>
     </div><!-- /.container-fluid -->
-    <div class="container-fluid">
-      <div class="row mb-2 text-center">
-        <div class="col-sm">
-          <h1 class="text-info">QUY ĐỊNH TRONG VIỆC BÁO CÁO</h1>
-            <ul class="list-group text-left">
-              <li class="list-group-item">
-                  1. Trước khi vào ca ghi ra nội dung công việc sẽ làm hoặc công việc được giao
-              </li>
-              <li class="list-group-item">
-                  2. Sau khi kết thúc ca làm việc tiến hành ghi báo cáo và tiến độ thực hiện
-              </li>
-              <li class="list-group-item">
-                  3. Ghi ra những nội dung hoặc góp ý khi thấy vấn đề sai sót trong lúc làm việc. <br>
-                  KHUYẾN KHÍCH NÊU ƯU ĐIỂM VÀ KHUYẾT ĐIỂM
-              </li>
-              <li class="list-group-item">
-                  4. Trong lúc không có việc hoặc không được giao việc thì tiến hành: <br>
-                  - Hoàn thiện các mục như <a href="https://www.behance.net/thietkedeli">behance.net</a> <br>
-                  - Tìm hiểu các câu hỏi: <br>
-                    a) Khách hàng <br>
-                    b) Giao việc như thế nào <br>
-                    c) Quy trình công việc (làm quy trình để kiếm soát tiến độ - và vào khuôn) <br>
-                ĐANG BỔ SUNG CÓ THỂ GÓP Ý
-              </li>
-            </ul>
-        </div>
-      </div>
-    </div>
   </section>
   <!-- Main content -->
   <section class="content">
@@ -87,10 +65,6 @@
                   <div class="col-md-12">
                     <label>Nội dung công việc</label>
                     <textarea id="editor1" name="content" style="width: 100%" placeholder="Nội dung công việc chi tiết"></textarea>
-                  </div>
-                  <div class="col-md-12">
-                    <label>Nội dung công việc</label>
-                    <texarea name = "editor1" class="ckeditor"> abc </texarea>
                   </div>
                   <!-- /.col-->
                   <!-- <div class="form-group col-md-12">

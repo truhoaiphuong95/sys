@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('head')
-<title>DELI | Chỉnh sửa link tải về</title>
+<title>KING | Chỉnh sửa link tải về</title>
 <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 @stop
   
@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>CHỈNH SỬA LINK FILE TẢI VỀ</h1>
+            <h1>CHỈNH SỬA LINK TẢI VỀ</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>DELI | Thêm Khách hàng</title>
+<title>KING | Thêm khách hàng mới</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -9,15 +9,15 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm">
-            <h1 class="text-center">NHẬP KHÁCH HÀNG</h1>
+          <div class="col-sm-6">
+            <h1>NHẬP KHÁCH HÀNG</h1>
           </div>
-          <!--<div class="col-sm-6">
+          <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
               <li class="breadcrumb-item active">Nhập khách hàng</li>
             </ol>
-          </div>-->
+          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -34,9 +34,9 @@
     @endif
     
       <!-- general form elements -->
-            <div class="col-sm card card-primary">
+            <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Sửa thông tin Khách hàng</h3>
+                <h3 class="card-title">Sửa thông tin khách hàng</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -61,21 +61,21 @@
                   </div>
                   <div class="form-group">
                     <label for="zalo">Zalo:</label>
-                    <input name="zalo" type="number" class="form-control" id="zalo" placeholder="Số điện thoại Zalo">
+                    <input name="zalo" type="number" class="form-control" id="zalo" placeholder="Số điện thoại Zalo" @if(isset($phone)) value="{{$phone}}" @endif>
                   </div>
                   <div class="form-group">
                     <label for="email">Email:</label>
                     <input name="email" type="text" class="form-control" id="email" placeholder="Địa chỉ thư điện tử" >
                   </div>
                   <div class="form-group">
-                    <label for="major">Doanh nghiệp:</label>
-                    <input name="major" type="text" class="form-control" id="major" placeholder="Nghề nghiệp hoặc tên doanh nghiệp" >
+                    <label for="major">Ngành học:</label>
+                    <input name="major" type="text" class="form-control" id="major" placeholder="Ngành học/trường học" >
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm Khách hàng</button>
+                  <button type="submit" class="btn btn-primary">Thêm vào</button>
                   <a onclick="history.go(-1);" class="btn">Quay lại</a>
                 </div>
               </form>
