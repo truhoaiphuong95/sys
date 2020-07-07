@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Sửa khách hàng: {{$client->ten}}</title>
+<title>DELI | Sửa khách hàng: {{$client->ten}}</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -69,7 +69,7 @@
                     <input name="email" type="text" class="form-control" id="email" value="{{$client->email}}" >
                   </div>
                   <div class="form-group">
-                    <label for="major">Ngành học:</label>
+                    <label for="major">Nghề nghiệp:</label>
                     <input name="major" type="text" class="form-control" id="major" value="{{$client->major}}" >
                   </div>
                 </div>

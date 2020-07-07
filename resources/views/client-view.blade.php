@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Khách hàng: {{$client->name}}</title>
+<title>DELI | Khách hàng: {{$client->name}}</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -59,7 +59,7 @@
               <!--<p class="text-muted text-center">Software Engineer</p>-->
               <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
-                  <b>Số điện thoại</b> <a class="float-right" href="tel:{{$client->sdt}}"> {{$client->phone}}</a>
+                  <b>Số điện thoại</b> <a class="float-right" href="tel:{{$client->phone}}"> {{$client->phone}}</a>
                 </li>
                 <li class="list-group-item">
                   <b>Ngày sinh</b> <a class="float-right">@if (isset($client->birthday)) {{date("d/m/Y", strtotime($client->birthday))}} @else Không có @endif</a>
@@ -71,7 +71,7 @@
                   <b>Email</b> @if ($client->email!="") <a class="float-right">{{$client->email}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
                 <li class="list-group-item">
-                  <b>Ngành học</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
+                  <b>Nghề nghiệp</b> @if ($client->major!="") <a class="float-right">{{$client->major}}</a> @else <a class="float-right">Không có</a> @endif
                 </li>
               </ul>
               @if(UserInfo()->level >= 3)

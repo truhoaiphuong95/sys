@@ -63,10 +63,8 @@
                 <input type="text" class="form-control" name="link" value="{{ old('link') }}" required>
               </div>
               <div class="form-group col-md-12">
-                <!--<label>SHA1</label>
-                <input type="text" class="form-control" name="sha1" value="{{ old('sha1') }}">-->
-                <label for="hinhthe">Chọn hình ảnh</label>
-	              <input type="file" class="form-control" id="hinhthe"  name="sha1" value="{{ old('sha1') }}"/>
+                <label>SHA1</label>
+                <input type="text" class="form-control" name="sha1" value="{{ old('sha1') }}">
               </div>
             </div>
           </div>

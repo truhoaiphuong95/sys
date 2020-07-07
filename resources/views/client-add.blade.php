@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Thêm khách hàng mới</title>
+<title>DELI | Thêm khách hàng mới</title>
 @stop
 @section('main')
   <!-- Content Wrapper. Contains page content -->
@@ -68,14 +68,14 @@
                     <input name="email" type="text" class="form-control" id="email" placeholder="Địa chỉ thư điện tử" >
                   </div>
                   <div class="form-group">
-                    <label for="major">Ngành học:</label>
+                    <label for="major">Nghề nghiệp:</label>
                     <input name="major" type="text" class="form-control" id="major" placeholder="Ngành học/trường học" >
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm vào</button>
+                  <button type="submit" class="btn btn-primary">Thêm Khách hàng</button>
                   <a onclick="history.go(-1);" class="btn">Quay lại</a>
                 </div>
               </form>
