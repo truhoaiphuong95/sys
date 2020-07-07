@@ -113,14 +113,14 @@
                 </thead>
                 <tbody>
                   @foreach($client->tickets as $data)
-                  <tr>
+                  <tr class="text-center">
                     <td>{{date("d/m/Y", strtotime($data->created_at))}}</td>
                     <td>{{$data->id}}</td>
                     <td>{{$data->model}}</td>
                     <td>
                       <span class="badge bg-{{$data->ticketStatus->class}}">{{$data->ticketStatus->name}}</span>
                     </td>
-                    <td><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
+                    <td class="text-center"><a href="{{route('staff.ticket.view.get', ['ticket_id' => $data->id])}}" class="btn btn-primary">Xem</a></td>
                   </tr>
                   @endforeach
                   </tfoot>
@@ -137,7 +137,7 @@
             <div class="card-body">
               <table id="example2" class="table table-bordered table-striped">
                 <thead>
-                  <tr>
+                  <tr class="text-center">
                     <th>Tên lớp</th>
                     <th>Ưu đãi</th>
                     <th>Báo giá</th>
@@ -154,7 +154,7 @@
                     <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100))}}</td>
                     <td>{{MoneyFormat($data->tuition_done)}}</td>
                     <td>{{MoneyFormat($data->course->tuition * (1-$data->deal_rate/100) - $data->tuition_done)}}</td>
-                    <td><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
+                    <td class="text-center"><a href="{{route('staff.coursestudent.edit.get', ['coursestudent_id' => $data->id])}}" class="btn btn-primary">Sửa</a></td>
                   </tr>
                   @endforeach
                   </tfoot>
