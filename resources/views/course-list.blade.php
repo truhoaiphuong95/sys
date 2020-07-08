@@ -52,7 +52,7 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
+                <tr class="text-center">
                   <th>Ngày nhận</th>
                   <th>Mã thiết kế</th>
                   <th>Nội dung thiết kế</th>
@@ -60,20 +60,20 @@
                   <th>Thời gian thiết kế</th>
                   <th>Người nhận</th>
                   <th>Thành viên tham gia</th>
-                  <th></th>
+                  <th>Chức năng</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($courses as $course)
                 <a href="{{$course->id}}">
                 <tr>
-                  <td>@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
-                  <td>{{ $course->shortname }}</td>
+                  <td class="text-center">@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
+                  <td class="text-center">{{ $course->shortname }}</td>
                   <td>{!! $course->linkName() !!}</a></td>
-                  <td>{{ number_format($course->tuition,0,",",".") }}</td>
-                  <td>{{ $course->lesson }}</td>
-                  <td>{{ $course->schedule }}</td>
-                  <td>
+                  <td class="text-right">{{ number_format($course->tuition,0,",",".") }}</td>
+                  <td class="text-center">{{ $course->lesson }}</td>
+                  <td class="text-center">{{ $course->schedule }}</td>
+                  <td class="text-center">
                     @if( $course->isDone() )
                     <span style="width: 88px;" class="btn btn-success">
                     @else
@@ -81,7 +81,7 @@
                     @endif
                     {{ $course->sumDone() }}/{{ $course->sum() }}/{{ $course->maxseat }}</span>
                   </td>
-                  <td>
+                  <td class="text-center">
                     <div class="btn-group">
                       <a href="{{route('staff.course.view.get', ['course_id' => $course->id])}}" class="btn btn-primary">Xem</a>
                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -116,25 +116,25 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
-                  <th>Ngày nhận</th>
-                  <th>Mã thiết kế</th>
-                  <th>Nội dung thiết kế</th>
-                  <th>Báo giá</th>
-                  <th>Thời gian thiết kế</th>
-                  <th>Người nhận</th>
-                  <th>Thành viên tham gia</th>
-                  <th></th>
-                </tr>
+                  <tr class="text-center">
+                    <th>Ngày nhận</th>
+                    <th>Mã thiết kế</th>
+                    <th>Nội dung thiết kế</th>
+                    <th>Báo giá</th>
+                    <th>Thời gian thiết kế</th>
+                    <th>Người nhận</th>
+                    <th>Thành viên tham gia</th>
+                    <th>Chức năng</th>
+                  </tr>
                 </thead>
                 <tbody>
                 @foreach($expected_courses as $course)
                 <a href="{{$course->id}}">
-                <tr>
+                <tr class="text-center">
                   <td>@if($course->opening_at==NULL) Chưa có @else {{ date("Y/m/d", strtotime($course->opening_at)) }} @endif</td>
                   <td>{{ $course->shortname }}</td>
-                  <td>{!! $course->linkName() !!}</a></td>
-                  <td>{{ number_format($course->tuition,0,",",".") }}</td>
+                  <td class="text-left">{!! $course->linkName() !!}</a></td>
+                  <td class="text-right">{{ number_format($course->tuition,0,",",".") }}</td>
                   <td>{{ $course->lesson }}</td>
                   <td>{{ $course->schedule }}</td>
                   <td>
