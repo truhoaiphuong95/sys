@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Danh sách các lớp</title>
+<title>DELI | Danh sách các dự</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -28,12 +28,12 @@
         @endif
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DANH SÁCH CÁC LỚP HỌC</h1>
+            <h1>DANH SÁCH DỰ ÁN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Danh sách lớp</li>
+              <li class="breadcrumb-item active">Danh sách dự án</li>
             </ol>
           </div>
         </div>
@@ -46,20 +46,20 @@
         <div class="col-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Danh sách các lớp học</h3>
+              <h3 class="card-title">Danh sách dự án</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Khai giảng</th>
-                  <th>Mã lớp học</th>
-                  <th>Tên</th>
-                  <th>Học phí</th>
-                  <th>Số buổi</th>
-                  <th>Lịch học</th>
-                  <th>Số lượng hiện tại</th>
+                  <th>Ngày nhận</th>
+                  <th>Mã thiết kế</th>
+                  <th>Nội dung thiết kế</th>
+                  <th>Báo giá</th>
+                  <th>Thời gian thiết kế</th>
+                  <th>Người nhận</th>
+                  <th>Thành viên tham gia</th>
                   <th></th>
                 </tr>
                 </thead>
@@ -110,20 +110,20 @@
         <div class="col-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Lớp học dự kiến mở chưa có lịch</h3>
+              <h3 class="card-title">Dự án dự kiến</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Khai giảng</th>
-                  <th>Mã lớp học</th>
-                  <th>Tên</th>
-                  <th>Học phí</th>
-                  <th>Số buổi</th>
-                  <th>Lịch học</th>
-                  <th>Số lượng hiện tại</th>
+                  <th>Ngày nhận</th>
+                  <th>Mã thiết kế</th>
+                  <th>Nội dung thiết kế</th>
+                  <th>Báo giá</th>
+                  <th>Thời gian thiết kế</th>
+                  <th>Người nhận</th>
+                  <th>Thành viên tham gia</th>
                   <th></th>
                 </tr>
                 </thead>
