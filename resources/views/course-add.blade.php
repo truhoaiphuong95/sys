@@ -58,7 +58,7 @@
                       <div class="custom-control custom-checkbox">
                         <input type='hidden' value='0' name='is_expected'>
                         <input class="custom-control-input" name="is_expected"  type="checkbox" id="customCheckbox1" value="1">
-                        <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu đây là lớp dự kiến</label>
+                        <label for="customCheckbox1" class="custom-control-label">Tick vào đây nếu đây là dự kiến</label>
                       </div>
                   </div>
                   <hr>
@@ -88,13 +88,9 @@
                     <label>Thành viên tham gia</label>
                     <input type="number" class="form-control" name="maxseat" value="{{ old('maxseat') }}" required>
                   </div>
-                  <div class="form-group">
-                    <label for="staff_id">Người thiết kế:</label>
-                    <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
-                      @foreach ($staffs as $data)
-                      <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
-                      @endforeach
-                    </select>
+                  <div class="form-group col-md-12">
+                    <label>Người thiết kế</label>
+                    <input type="text" class="form-control" name="teacher" value="{{ old('teacher') }}" required>
                   </div>
                   <div class="form-group col-md-12">
                     <label>Báo giá thiết kế</label>
