@@ -35,7 +35,7 @@
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                <tr>
+                <tr class="text-center">
                   <th>Mã KH</th>
                   <th>Họ và Tên</th>
                   <th>Số điện thoại</th>
