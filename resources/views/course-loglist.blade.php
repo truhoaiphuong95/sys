@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Nhật ký giáo dục</title>
+<title>DELI | Nhật ký</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -11,12 +11,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>NHẬT KÝ GIÁO DỤC</h1>
+            <h1>NHẬT KÝ</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Nhật ký giáo dục</li>
+              <li class="breadcrumb-item active">Nhật ký</li>
             </ol>
           </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Nhật ký giáo dục</h3>
+              <h3 class="card-title">Nhật ký</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

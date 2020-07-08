@@ -1,6 +1,6 @@
 @extends('master')
 @section('head')
-<title>KING | Danh sách lớp</title>
+<title>DELI | Danh sách dự án</title>
 <link rel="stylesheet" href="{{secure_asset('plugins/datatables/dataTables.bootstrap4.css')}}">
 @stop
 @section('main')
@@ -21,12 +21,12 @@
       @endif
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>DANH SÁCH HỌC VIÊN</h1>
+          <h1>DANH SÁCH KHÁCH HÀNG</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item active">Danh sách học viên</li>
+            <li class="breadcrumb-item active">Danh sách khách hàng</li>
           </ol>
         </div>
       </div>
@@ -51,22 +51,22 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <div class="nav-link">
-                  Khai giảng <span class="float-right">@if($course->opening_at==NULL) Chưa có @else {{$course->opening_at}} @endif</span>
+                  Ngày nhận: <span class="float-right">@if($course->opening_at==NULL) Chưa có @else {{$course->opening_at}} @endif</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Học phí <span class="float-right">{{$course->tuition}}</span>
+                  Báo giá: <span class="float-right">{{$course->tuition}}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Số tiết <span class="float-right">{{$course->lesson}}</span>
+                  Thời gian: <span class="float-right">{{$course->lesson}}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Giảng viên <span class="float-right">{{$course->teacher}}</span>
+                  Thiết kế: <span class="float-right">{{$course->teacher}}</span>
                 </div>
               </li>
             </ul>
@@ -75,13 +75,13 @@
             <a class="btn btn-default"  href="{{ route('staff.course.exportphone.get', ['course_id' => $course->id]) }}">Danh sách SĐT</a>
             <a class="btn btn-default"  href="{{ route('staff.course.exportexcel.get', ['course_id' => $course->id]) }}">Tải Excel</a>
             <div class="btn-group float-right">
-              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin lớp</a>
+              <a href="{{ route('staff.course.edit.get', ['course_id' => $course->id]) }}" class="btn btn-primary">Sửa thông tin</a>
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu" role="menu">
-                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá lớp</a>
+                <a class="dropdown-item" href="{{ route('staff.course.delete.get', ['course_id' => $course->id]) }}">Xoá</a>
               </div>
             </div>
           </div>
@@ -93,22 +93,22 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <div class="nav-link">
-                  Đăng ký <span class="float-right">{{ $course->sum() }}</span>
+                  Đăng ký: <span class="float-right">{{ $course->sum() }}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Đã đóng giữ chỗ <span class="float-right">{{ $course->sumDeposited() }}</span>
+                  Đã cọc: <span class="float-right">{{ $course->sumDeposited() }}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Đã hoàn thành <span class="float-right">{{ $course->sumDone() }}</span>
+                  Hoàn thành: <span class="float-right">{{ $course->sumDone() }}</span>
                 </div>
               </li>
               <li class="nav-item">
                 <div class="nav-link">
-                  Tối đa <span class="float-right">{{ $course->maxseat }}</span>
+                  Thành viên: <span class="float-right">{{ $course->maxseat }}</span>
                 </div>
               </li>
               <li class="nav-item">
@@ -141,12 +141,12 @@
           <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
-                <tr>
+                <tr class="text-center">
                   <th>STT</th>
-                  <th>Tên khách hàng</th>
+                  <th>Họ và Tên</th>
                   <th>Số điện thoại</th>
-                  <th>Ưu đãi</th>
-                  <th>Học phí</th>
+                  <th>Hoa hồng</th>
+                  <th>Báo giá</th>
                   <th>Đã thu</th>
                   <th>Chưa thu</th>
                   <th>Ghi chú</th>
@@ -183,7 +183,7 @@
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item" href="{{route('staff.coursestudent.delete.get', ['coursestudent_id' => $data->id])}}">Xóa khỏi lớp</a>
+                        <a class="dropdown-item" href="{{route('staff.coursestudent.delete.get', ['coursestudent_id' => $data->id])}}">Xóa</a>
                       </div>
                     </div>
                   </td>
