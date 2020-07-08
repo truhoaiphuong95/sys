@@ -82,22 +82,26 @@
                   <div class="form-group col-md-12">
                     <label>Người nhận</label>
                     <!--<input type="text" class="form-control" name="schedule" value="{{ old('schedule') }}" required>-->
-                    <input type="hidden" class="form-control" name="schedule" value="{{ UserInfo()->name }}" required>
+                    <input type="" class="form-control" name="schedule" value="{{ UserInfo()->name }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Sỉ số tối đa</label>
+                    <label>Thành viên tham gia</label>
                     <input type="number" class="form-control" name="maxseat" value="{{ old('maxseat') }}" required>
                   </div>
-                  <div class="form-group col-md-12">
-                    <label>Giáo viên</label>
-                    <input type="text" class="form-control" name="teacher" value="{{ old('teacher') }}" required>
+                  <div class="form-group">
+                    <label for="staff_id">Người thiết kế:</label>
+                    <select name="staff_id" id="staff_id" class="form-control select2" style="width: 100%;">
+                      @foreach ($staffs as $data)
+                      <option value="{{$data->id}}" @if($data->id == UserInfo()->id) checked @endif >{{$data->name}}</option>
+                      @endforeach
+                    </select>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Học phí</label>
+                    <label>Báo giá thiết kế</label>
                     <input type="number" class="form-control" name="tuition" value="{{ old('tuition') }}" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label>Ghi chú (Chỉ giáo viên xem)</label>
+                    <label>Ghi chú</label>
                     <input type="text" class="form-control" name="note" value="{{ old('note') }}">
                   </div>
                 </div>
